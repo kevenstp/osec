@@ -409,6 +409,28 @@ a {
     background-size: cover;
 }
 
+.table td {
+    color: #606060;
+    vertical-align: middle;
+}
+
+.table i {
+    font-size: 0.8rem;
+}
+
+.table label {
+    margin-bottom: 0;
+}
+
+.table th, .table td {
+    padding-left: 0;
+
+}
+
+.table th {
+    font-size: 0.75rem;
+}
+
 #myVideo {
     position: fixed;
     right: 0;
