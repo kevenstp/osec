@@ -2,7 +2,7 @@
 
 use Models\Item;
 
-class ExampleController extends Controller
+class HomeController extends Controller
 {
 
     public function initializeRoutes()
