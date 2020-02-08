@@ -401,16 +401,6 @@ a {
     font-family: 'Calistoga', cursive;
 }
 
-.dot-filter {
-    z-index: 3;
-    opacity: 0.5;
-    height : 100%;
-    position: absolute;
-    width : 100%;
-    top : 0;
-    background-image: url("../assets/dotgrid.png");
-}
-
 .cover-image {
     width: 100%;
     height : 100%;
