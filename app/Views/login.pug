@@ -4,19 +4,19 @@ block content
   .position-relative.w-100.h-100
     .full-page-div
       video#myVideo(autoplay='', muted='', loop='')
-        source(src='/assets/bg-login.mp4', type='video/mp4')
+        source(src='/assets/video.mp4', type='video/mp4')
       #page-cover-content
         .d-flex.align-items-center
-          img(src="/assets/images/logo_osec.png")
+          img(src="/assets/osec_white.png")
           .vl-white
-          h1 Banque du Colonel
+          h1 Authentification
         +flash()
         form(action="/connexion", method="POST")
           input.form-control(type='text', name="email" aria-describedby='usernameHelp', placeholder='Courriel')
           input.form-control(type='password', name="password", aria-describedby='passwordHelp', placeholder='Mot de passe')
           button.btn(type='submit') Connexion
         .d-flex.justify-content-center
-          a#signuplink.hover-dark(href="/inscription") Pas de compte? Inscrivez-vous gratuitement
+          a#signuplink.hover-dark(href="/inscription") Pas de compte? Inscrivez-vous gratuitement.
     .blue-gradient-filter
     .dot-filter
 
