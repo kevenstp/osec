@@ -1,0 +1,41 @@
+extends layout/layout
+
+block content
+  .position-relative.w-100.h-100
+    .full-page-div
+      video#myVideo(autoplay='', muted='', loop='')
+        source(src='/assets/video.mp4', type='video/mp4')
+      #page-cover-content
+        .d-flex.align-items-center
+          img(src="/assets/osec_white.png")
+          .vl-white
+          h1 Inscription
+        +flash()
+        form(action="/connexion", method="POST")
+          .row
+            .col
+              input.form-control(type='text', name="firstname" aria-describedby='usernameHelp', placeholder='Prénom')
+            .col
+              input.form-control(type='text', name="lastname" aria-describedby='usernameHelp', placeholder='Nom')
+          .row
+            .col
+              input.form-control(type='text', name="email" aria-describedby='usernameHelp', placeholder='Courriel')
+          .row
+            .col
+              input.form-control(type='password', name="confirmPassword", aria-describedby='passwordHelp', placeholder='Mot de passe')
+            .col
+              input.form-control(type='password', name="password", aria-describedby='passwordHelp', placeholder='Confirmer le mot de passe')
+          .row
+            .col
+              input.form-control(type='text', name="address" aria-describedby='usernameHelp', placeholder='Adresse')
+          .row
+            .col
+              input.form-control(type='text', name="city" aria-describedby='usernameHelp', placeholder='Ville')
+            .col
+              input.form-control(type='text', name="zip" aria-describedby='usernameHelp', placeholder='Code postal')
+
+          button.btn(type='submit') S'inscrire
+    .blue-gradient-filter
+    .dot-filter
+
+
