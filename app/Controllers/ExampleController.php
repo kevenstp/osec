@@ -2,29 +2,20 @@
 
 use Models\Item;
 
-class ExampleController extends SecurityController
+class ExampleController extends Controller
 {
-    /**
-     * Defines all the routes supported by this controller associated with
-     * inner methods.
-     */
+
     public function initializeRoutes()
     {
         $this->get("/", "index");
         $this->get("/items", "jsonTest");
     }
 
-    /**
-     * Example route which renders a simple page of items.
-     */
     public function index()
     {
         return $this->render('example', ["currentDate" => date('Y-m-d')]);
     }
 
-    /**
-     * Example route rendering json entities.
-     */
     public function jsonTest()
     {
         $items = $this->buildItems();
