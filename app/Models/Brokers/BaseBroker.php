@@ -5,7 +5,7 @@ namespace Models;
 
 use Models\Brokers\Broker;
 
-abstract class MBroker extends Broker
+abstract class BaseBroker extends Broker
 {
 
 }
