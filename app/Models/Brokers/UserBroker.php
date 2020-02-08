@@ -40,7 +40,7 @@ class UserBroker extends Broker
     public function insertWithAddress($user)
     {
         $this->insert($user);
-        $sql = "INSERT INTO "
+        $sql = "INSERT INTO ";
     }
 
     public function update($user)
