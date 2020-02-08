@@ -147,3 +147,288 @@ h1 {
     object-fit: cover;
     padding : 0;
 }
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.navbar {
+    background-color: #A3080C;
+    color: white;
+}
+
+.navbar .row {
+    width: 100%;
+}
+
+.navbar img {
+    width : 64px;
+    height : 64px;
+}
+
+.navbar h1 {
+    font-size: 0.8rem;
+    width : 0.5rem;
+    font-family: 'Calistoga', cursive;
+}
+
+.navbar .vl-white {
+    height : 52px;
+    margin-left: 4px;
+    margin-right: 18px;
+}
+
+.test {
+    background: repeating-linear-gradient(
+            -55deg,
+            #222,
+            #222 10px,
+            #333 10px,
+            #333 20px
+    );
+
+    width: 100px;
+    height : 120px;
+}
+
+.full-page-div {
+    height : 100%;
+    width : 100%;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#page-cover-content {
+    height : 500px;
+    position: absolute;
+    z-index: 500;
+    top: 50%;
+    left: 50%;
+    color: black;
+    border-radius : 1rem;
+    width: 40%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#page-cover-content .form-control::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
+#page-cover-content .form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
+#page-cover-content .form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
+#page-cover-content .form-control:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
+#page-cover-content .form-control::-ms-input-placeholder { color: white; }
+
+#page-cover-content img {
+    width : 125px;
+    height : 125px;
+}
+
+#page-cover-content a:hover {
+    text-decoration: none;
+}
+
+#content-body select {
+    height : 50px;
+    margin-bottom: 16px;
+}
+
+#content-body button {
+    color: white;
+}
+
+#content-body input {
+    height : 50px;
+    margin-bottom: 16px;
+}
+
+#content-body .d-block {
+    width : 50%;
+}
+
+#signuplink {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.75rem;
+}
+
+.vl-white {
+    border-left: 0.1rem solid white;
+    margin-left: 32px;
+    margin-right: 32px;
+    height: 125px;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn {
+    background: white;
+}
+
+.hover-dark {
+    color : #f3f3f3;
+    -webkit-transition: 0.2s ease-in-out!important;
+}
+
+.hover-dark:hover {
+    text-decoration: none;
+    color: darkgray;
+    -webkit-transition: 0.2s ease-in-out;
+}
+
+.circle {
+    margin-left: 8px;
+    margin-right: 8px;
+    background: white;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.circle i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.summary-section {
+    color : white;
+    border-radius: 8px;
+    margin-top: 16px;
+    background-color: #A3080C;
+    height : 50px;
+}
+
+.message {
+    width : 100%;
+    opacity: 0.8;
+    padding : 12px;
+    border-radius: 5px;
+    margin-top: 16px;
+    margin-bottom : 16px;
+}
+
+.info {
+    background: white;
+    color : black;
+}
+
+.error {
+    background: #A3080C;
+    color : white;
+}
+
+.success {
+    background: #1e7e34;
+    color : white;
+}
+
+#content-body canvas:first-of-type {
+    margin-bottom: 32px;
+}
+
+.chart-wrapper {
+    height : 200px;
+}
+
+#content-body h1 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.table {
+    border-top: 0;
+}
+
+.table td {
+    padding-left: 0;
+
+}
+
+.table th {
+    padding-left: 0;
+    border-top: 0;
+    padding-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+#content-body h1:first-of-type {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.summary-section .vl-white {
+    height : 50%;
+    margin-right: 8px;
+    margin-left: 16px;
+}
+
+.summary-section i {
+    color : black;
+    font-size: 1.1rem;
+}
+
+#page-cover-content input {
+    background: #7a0d11;
+    color : white;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    border: none;
+    height : 60px;
+    margin-bottom: 16px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+#page-cover-content form {
+    margin-top: 32px;
+}
+
+#page-cover-content h1 {
+    color: white;
+    letter-spacing: 4px;
+    font-family: 'Calistoga', cursive;
+}
+
+.dot-filter {
+    z-index: 3;
+    opacity: 0.5;
+    height : 100%;
+    position: absolute;
+    width : 100%;
+    top : 0;
+    background-image: url("../assets/dotgrid.png");
+}
+
+.cover-image {
+    width: 100%;
+    height : 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
