@@ -158,11 +158,6 @@ a {
     color: #00B7FF;
 }
 
-.navbar {
-    background-color: #A3080C;
-    color: white;
-}
-
 .navbar .row {
     width: 100%;
 }
@@ -386,7 +381,7 @@ a {
 }
 
 #page-cover-content input {
-    background: #7a0d11;
+    background: #1e3c72;
     color : white;
     font-size: 0.8rem;
     opacity: 0.8;
