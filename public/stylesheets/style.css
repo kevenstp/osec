@@ -409,33 +409,28 @@ a {
     background-size: cover;
 }
 
-.table td {
-    color: #606060;
-    vertical-align: middle;
-}
-
-.table i {
-    font-size: 0.8rem;
-}
-
-.table label {
-    margin-bottom: 0;
-}
-
-.table th, .table td {
-    padding-left: 0;
-
-}
-
-.table th {
-    font-size: 0.75rem;
-}
-
 #myVideo {
     position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+}
+
+.containerForm {
+    width: 100%;
+    height: 100%;
+}
+
+.form {
+    height: 80%;
+    width: 80%;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
