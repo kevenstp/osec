@@ -2,12 +2,12 @@
 
 use Models\Item;
 
-class ExampleController extends Controller
+class HomeController extends Controller
 {
 
     public function initializeRoutes()
     {
-        $this->get("/", "index");
+        //$this->get("/", "index");
         $this->get("/items", "jsonTest");
     }
 
