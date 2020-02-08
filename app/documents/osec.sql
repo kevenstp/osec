@@ -17,7 +17,12 @@ CREATE TABLE IF NOT EXISTS `User` (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
     firstName VARCHAR(80) NOT NULL,
     lastName VARCHAR(80) NOT NULL,
-    role BOOLEAN NOT NULL DEFAULT 0
+    role enum('resident', 'admin') NOT NULL DEFAULT 'resident',
+    birthDate DATE,
+    homePhoneNumber VARCHAR(15),
+    cellPhoneNumber VARCHAR(15),
+    workPhoneNumber VARCHAR(15),
+    primaryMailAddress VARCHAR(254)
 );
 
 CREATE TABLE IF NOT EXISTS Form (
