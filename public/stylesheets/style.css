@@ -217,11 +217,11 @@ a {
     transform: translateX(-50%) translateY(-50%);
 }
 
-#page-cover-content .form-control::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
-#page-cover-content .form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
-#page-cover-content .form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
-#page-cover-content .form-control:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
-#page-cover-content .form-control::-ms-input-placeholder { color: white; }
+#page-cover-content .form-control::-webkit-input-placeholder { color: white; opacity: 0.5; }  /* WebKit, Blink, Edge */
+#page-cover-content .form-control:-moz-placeholder { color: white; opacity: 0.5; }  /* Mozilla Firefox 4 to 18 */
+#page-cover-content .form-control::-moz-placeholder { color: white; opacity: 0.5; }  /* Mozilla Firefox 19+ */
+#page-cover-content .form-control:-ms-input-placeholder { color: white; opacity: 0.5; }  /* Internet Explorer 10-11 */
+#page-cover-content .form-control:-ms-input-placeholder { color: white; opacity: 0.5; }
 
 #page-cover-content img {
     width : 125px;
@@ -407,6 +407,28 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.table td {
+    color: #606060;
+    vertical-align: middle;
+}
+
+.table i {
+    font-size: 0.8rem;
+}
+
+.table label {
+    margin-bottom: 0;
+}
+
+.table th, .table td {
+    padding-left: 0;
+
+}
+
+.table th {
+    font-size: 0.75rem;
 }
 
 #myVideo {
