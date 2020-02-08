@@ -1,28 +1,23 @@
-doctype html
-html
-  head
-    title=title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(href='https://fonts.googleapis.com/css?family=Calistoga|Work+Sans:500&display=swap', rel='stylesheet')
-  body
-    .position-relative.w-100.h-100
-      .full-page-div
-        video#myVideo(autoplay='', muted='', loop='')
-          source(src='/assets/videos/kfc.mp4', type='video/mp4')
-        #page-cover-content
-          .d-flex.align-items-center
-            a(href="https://www.kfc.ca/menu/for-sharing?gclid=EAIaIQobChMIh5_x68r85QIVwZ-zCh0N0w4rEAAYASAAEgKPY_D_BwE&gclsrc=aw.ds" target="_blank")
-              img(src="/assets/images/kfc.png")
-            .vl-white
-            h1 Banque du Colonel
-          +flash()
-          form(action="/connexion", method="POST")
-            input.form-control(type='text', name="email" aria-describedby='usernameHelp', placeholder='Courriel')
-            input.form-control(type='password', name="password", aria-describedby='passwordHelp', placeholder='Mot de passe')
-            button.btn(type='submit') Connexion
-          .d-flex.justify-content-center
-            a#signuplink.hover-dark(href="/inscription") Pas de compte? Inscrivez-vous gratuitement
-      .blue-gradient-filter
-      .dot-filter
+extends layout/layout
+
+block content
+  .position-relative.w-100.h-100
+    .full-page-div
+      video#myVideo(autoplay='', muted='', loop='')
+        source(src='/assets/bg-login.mp4', type='video/mp4')
+      #page-cover-content
+        .d-flex.align-items-center
+          img(src="/assets/images/logo_osec.png")
+          .vl-white
+          h1 Banque du Colonel
+        +flash()
+        form(action="/connexion", method="POST")
+          input.form-control(type='text', name="email" aria-describedby='usernameHelp', placeholder='Courriel')
+          input.form-control(type='password', name="password", aria-describedby='passwordHelp', placeholder='Mot de passe')
+          button.btn(type='submit') Connexion
+        .d-flex.justify-content-center
+          a#signuplink.hover-dark(href="/inscription") Pas de compte? Inscrivez-vous gratuitement
+    .blue-gradient-filter
+    .dot-filter
 
 

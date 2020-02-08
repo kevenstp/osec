@@ -7,7 +7,7 @@ class HomeController extends Controller
 
     public function initializeRoutes()
     {
-        $this->get("/", "index");
+        //$this->get("/", "index");
         $this->get("/items", "jsonTest");
     }
 
