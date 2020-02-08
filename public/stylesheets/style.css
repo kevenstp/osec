@@ -381,7 +381,7 @@ a {
 }
 
 #page-cover-content input {
-    background: #1e3c72;
+    background: #1761a0;
     color : white;
     font-size: 0.8rem;
     opacity: 0.8;
@@ -398,7 +398,7 @@ a {
 #page-cover-content h1 {
     color: white;
     letter-spacing: 4px;
-    font-family: 'Calistoga', cursive;
+    font-family: 'Flamenco', cursive;
 }
 
 .cover-image {
