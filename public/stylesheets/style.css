@@ -221,7 +221,7 @@ a {
 #page-cover-content .form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
 #page-cover-content .form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
 #page-cover-content .form-control:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
-#page-cover-content .form-control::-ms-input-placeholder { color: white; }
+#page-cover-content .form-control:-ms-input-placeholder { color: white; }
 
 #page-cover-content img {
     width : 125px;
