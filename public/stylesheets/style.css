@@ -679,5 +679,10 @@ legend {
     padding-bottom: 4px;
 }
 
+.billboardCardSize {
+    min-width: 200px;
+    max-width: 540px;
+}
+
 .round8 {border-radius: 8px;}
 .round12 {border-radius: 12px;}
