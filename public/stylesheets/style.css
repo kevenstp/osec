@@ -815,3 +815,11 @@ legend {
     height: 20px;
     width: 20px;
 }
+
+.a-no-color {
+    color: white;
+}
+
+.a-no-color:hover {
+    color: white;
+}
