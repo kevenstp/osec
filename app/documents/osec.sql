@@ -23,13 +23,15 @@ CREATE TABLE IF NOT EXISTS `User` (
     homePhoneNumber VARCHAR(15),
     cellPhoneNumber VARCHAR(15),
     workPhoneNumber VARCHAR(15),
-    email VARCHAR(254)
+    email VARCHAR(254),
+    password TEXT
 );
 
 CREATE TABLE IF NOT EXISTS BillboardPost (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
     userId INTEGER NOT NULL,
     content VARCHAR(255) NOT NULL,
+    title VARCHAR(64) NOT NULL,
     datetime TIMESTAMP NOT NULL,
     FOREIGN KEY (userId) REFERENCES `User` (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -91,3 +93,10 @@ CREATE TABLE IF NOT EXISTS CityWaterZone (
 INSERT INTO City (id, `name`, province, weatherTimestamp) VALUES (DEFAULT, 'Sorel-Tracy', 'Québec', NULL);
 INSERT INTO WaterZone (id, `name`, waterLevel) VALUES (DEFAULT, 'Bas-Richelieu', 0);
 INSERT INTO CityWaterZone (cityId, waterZoneId) VALUES (1, 1);
+INSERT INTO User (id, firstname, lastname, role, birthDate, homePhoneNumber, cellPhoneNumber, workPhoneNumber, email, password) VALUES (
+    DEFAULT , 'Martin', 'Sandwich', 'resident', null, '450-746-0000', '450-808-0000', '450-743-0000', 'martin@sandwich.io', '$2y$10$GbYAYXlpDvGHqYw2hLcXwuR87egdAF7vDyHqX92Nuab8Z7YhGCgxW' /* Omega123*/
+);
+INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Allo', 'Ceci est une description!', CURRENT_TIMESTAMP);
+INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Allo 2', 'Ceci est une description! Ceci est une description! Ceci est une description! Ceci est une description! Ceci est une description!', CURRENT_TIMESTAMP);
+INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Allo 3', 'Ceci est une description! Ceci est une description! Ceci est une description!', CURRENT_TIMESTAMP);
+INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Allo 4', 'Ceci est une description! Ceci est une description!', CURRENT_TIMESTAMP);
