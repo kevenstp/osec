@@ -684,5 +684,62 @@ legend {
     max-width: 540px;
 }
 
+.claimCardContainer {
+
+}
+
+.claimCard {
+    min-width: 120px;
+    max-width: 120px;
+    min-height: 80px;
+    border-radius: 16px;
+    opacity: 0.8;
+    background-color: #000014;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: gainsboro;
+}
+
+.sequency-line {
+    margin-top: auto;
+    margin-bottom: auto;
+    height : 0.1rem;
+    margin-left : 2px;
+    margin-right : 2px;
+    background-color: #808080;
+    display: flex;
+    flex-grow: 1;
+}
+
+.claimCardsLine {
+    margin-bottom: 12px;
+}
+
+.claimStepsContainer {
+    background-color: lightgray;
+    border: #1b1e21;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.claimCardsContainer {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.clickable {
+    text-decoration: none;
+    color: #00B7FF;
+}
+
+.clickable:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.margin-side-8 { margin-left: 8px; margin-right: 8px; }
+.margin-side-16 { margin-left: 16px; margin-right: 16px; }
+.margin-side-32 { margin-left: 32px; margin-right: 32px; }
 .round8 {border-radius: 8px;}
 .round12 {border-radius: 12px;}
