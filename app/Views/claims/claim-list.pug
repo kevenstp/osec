@@ -9,14 +9,18 @@ block content
   +navbar
   +page-cover
   .container
-    h1 Vos réclamations
+    h1 État
     hr
     br
     .claimCardsContainer
       .row
-        +claimCard("Étape 1", "2019-01-10", "#")
+        +claimCardDisable("Étape 1", "2019-01-10", "#")
+        span.sequency-line-disable
+        +claimCard("Étape 2", "2019-02-10", "#")
         span.sequency-line
-        +claimCardDisable("Étape 2", "2019-02-10", "#")
+        +claimCardDisable("Étape 3", "2020-10-20", "#")
+        span.sequency-line-disable
+        +claimCardDisable("Étape 4", "2020-10-22", "#")
         span.sequency-line-disable
     br
     hr
