@@ -64,8 +64,8 @@ mixin navbar()
         .col-10.text-right.no-overflow
           .d-flex.align-items-center.justify-content-end
             a.mr-3.hover-dark.navbar-link.animated-line(href="/babillard") Babillard
-            a.mr-3.hover-dark.navbar-link.animated-line(href="/guide") Guide
             a.mr-3.hover-dark.navbar-link.animated-line(href="/reclamations") Réclamations
+            a.mr-3.hover-dark.navbar-link.animated-line(href="/guide") Guide
             +form("get", "alerte")(enctype="multipart/form-data")
                 button.fa.fa-bell.btn-danger.round12
             audio#notif-sound(src='/assets/sounds/notification.mp3' preload='auto' controls='none' volume='0.1' style="display:none")

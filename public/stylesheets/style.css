@@ -10,6 +10,7 @@ html, body {
 h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-size: 2rem;
 }
 
 h1 span{
