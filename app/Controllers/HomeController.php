@@ -1,6 +1,6 @@
 <?php namespace Controllers;
 
-use Utilities\WebScraper;
+use Models\Utilities\WebScraper;
 
 class HomeController extends Controller
 {

@@ -1,8 +1,4 @@
-<?php
-
-
-namespace Controllers;
-
+<?php namespace Controllers;
 
 use Zephyrus\Network\Response;
 
@@ -16,7 +12,7 @@ abstract class Controller extends SecurityController
         $this->args = $args;
         $this->page = $page;
         $this->setDefaultTitle("õsec");
-        return parent::render($page, $args);
+        return parent::render($this->page, $this->args);
     }
 
     public function before()
