@@ -14,51 +14,16 @@ block content
     h1 Notes
     br
     .row
-      .col.mb-4
-        .card.card-body.p-0
-          .position-relative
-            .cover-image(style="background-image: url('/assets/test-banner.jpg');")
-              .over-div.position-relative
-                .position-absolute.over-corner.flex-column
-                br
-                .text-center.text-white.mb-3.ml-2.mr-2
-                  h5: a.hover-dark(href="#") Allo
-                .pb-5
-            .black-filter
-            .dot-filter
-      .col.mb-4
-        .card.card-body.p-0
-          .position-relative
-            .cover-image(style="background-image: url('/assets/test-banner.jpg');")
-              .over-div.position-relative
-                .position-absolute.over-corner.flex-column
-                br
-                .text-center.text-white.mb-3
-                  h5: a.hover-dark(href="#") AlloAlloAlloAlloAlloAlloAlloAlloAllo
-                .pb-5
-            .black-filter
-            .dot-filter
-      .col.mb-4
-        .card.card-body.p-0
-          .position-relative
-            .cover-image(style="background-image: url('/assets/test-banner.jpg');")
-              .over-div.position-relative
-                .position-absolute.over-corner.flex-column
-                br
-                .text-center.text-white.mb-3
-                  h5: a.hover-dark(href="#") AlloAlloAlloAlloAlloAllos
-                .pb-5
-            .black-filter
-            .dot-filter
-      .col.mb-4
-        .card.card-body.p-0
-          .position-relative
-            .cover-image(style="background-image: url('/assets/test-banner.jpg');")
-              .over-div.position-relative
-                .position-absolute.over-corner.flex-column
-                br
-                .text-center.text-white.mb-3
-                  h5: a.hover-dark(href="#") AlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAllo
-                .pb-5
-            .black-filter
-            .dot-filter
+      each post in posts
+        .col.mb-4
+          .card.card-body.p-0
+            .position-relative
+              .cover-image(style="background-image: url('/assets/test-banner.jpg');")
+                .over-div.position-relative
+                  .position-absolute.over-corner.flex-column
+                  br
+                  .text-center.text-white.mb-3.ml-2.mr-2
+                    h5: a.hover-dark(href="#")=post.content
+                  .pb-5
+              .black-filter
+              .dot-filter

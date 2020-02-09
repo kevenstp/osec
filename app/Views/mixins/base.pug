@@ -40,6 +40,20 @@ mixin page-cover()
     .black-filter
     .dot-filter
 
+mixin notes()
+  .col.mb-4
+    .card.card-body.p-0
+      .position-relative
+        .cover-image(style="background-image: url('/assets/test-banner.jpg');")
+          .over-div.position-relative
+            .position-absolute.over-corner.flex-column
+            br
+            .text-center.text-white.mb-3.ml-2.mr-2
+              h5: a.hover-dark(href="#") Allo
+            .pb-5
+        .black-filter
+        .dot-filter
+
 mixin navbar()
   nav.navbar.text-white.position-absolute
     .container
