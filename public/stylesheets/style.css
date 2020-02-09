@@ -475,6 +475,62 @@ hr {
     letter-spacing: 2px;
 }
 
+#guide1 {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: white;
+}
+
+#guide2 {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #003366;
+}
+
+
+#guide3 {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #CCCC99;
+}
+
+.spacer {
+    height:10%;
+    width: 100%;
+}
+
+.spacer2 {
+    height:5%;
+    width: 100%;
+}
+
+.blueSky {
+    color: #003366;
+    font-weight: bolder;
+}
+
+.beige {
+    color: #CCCC99;
+}
+
+.white {
+    color: white;
+}
+
+.magenta {
+    color: #14145a;
+}
+
+.centerText{
+    text-align: center;
+}
+
 #page-cover {
     margin-top: 30px;
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Models;
+namespace Models\Brokers;
 
 use Models\Brokers\Broker;
 use Models\Brokers\Findable;
