@@ -82,14 +82,14 @@ abstract class SecurityController extends \Zephyrus\Security\Controller
          * headers please see : https://content-security-policy.com/
          */
         $csp = new ContentSecurityPolicy();
-        $csp->setDefaultSources(["'self'"]);
-        $csp->setFontSources(["'self'", 'https://fonts.googleapis.com', 'https://fonts.gstatic.com']);
-        $csp->setStyleSources(["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"]);
-        $csp->setScriptSources(["'self'", 'https://ajax.googleapis.com', 'https://maps.googleapis.com',
-            'https://www.google-analytics.com', 'http://connect.facebook.net']);
-        $csp->setChildSources(["'self'", 'http://staticxx.facebook.com']);
-        $csp->setImageSources(["'self'", 'data:']);
-        $csp->setBaseUri([$this->request->getBaseUrl()]);
+        // $csp->setDefaultSources(["'self'"]);
+        // $csp->setFontSources(["'self'", 'https://fonts.googleapis.com', 'https://fonts.gstatic.com']);
+        // $csp->setStyleSources(["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"]);
+        // $csp->setScriptSources(["'self'", 'https://ajax.googleapis.com', 'https://maps.googleapis.com',
+        // 'https://www.google-analytics.com', 'http://connect.facebook.net']);
+        // $csp->setChildSources(["'self'", 'http://staticxx.facebook.com', "'unsafe-inline"]);
+        //$csp->setImageSources(["'self'", 'data:']);
+        //$csp->setBaseUri([$this->request->getBaseUrl()]);
 
         /**
          * The SecureHeader class is the instance that will actually sent all the

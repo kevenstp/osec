@@ -26,7 +26,7 @@ mixin flashMessage(data, type)
 mixin actions-section()
   .actions-section
     .d-flex
-      a(href='/babillard/creation' data-tooltip="tooltip" title="Créer une publication").hover-dark
+      a(href='/babillard/creation' data-tooltip="tooltip" data-toggle="modal" data-target="#addModal" title="Créer une publication").hover-dark
         .round-button
           i.fas.fa-plus
 
@@ -64,8 +64,16 @@ mixin navbar()
         .col-10.text-right.no-overflow
           .d-flex.align-items-center.justify-content-end
             a.mr-3.hover-dark.navbar-link.animated-line(href="/babillard") Babillard
-            a.mr-3.hover-dark.navbar-link.animated-line(href="/guide") Guide
             a.mr-3.hover-dark.navbar-link.animated-line(href="/reclamations") Réclamations
+            a.mr-3.hover-dark.navbar-link.animated-line(href="/guide") Guide
+            //+form("get", "alerte")(enctype="multipart/form-data")
+            if danger
+                button.disabled.fa.fa-exclamation-circle.btn-danger.round12.padding-v4.mr-3
+            else
+                button.disabled.fa.fa-exclamation-circle.btn-success.round12.padding-v4.mr-3
+            +form("post", "/compte")
+                button(type='submit').fa.fa-users-cog.round12.padding-v4.mr-3
+            //audio#notif-sound(src='/assets/sounds/notification.mp3' preload='auto' controls='none' volume='0.1' style="display:none")
 //-
   Allows usage HTTP method besides GET and POST. Zephyrus verifies the existence of a __method
   parameter in the request, if it exists, it overwrites the submitted method.
