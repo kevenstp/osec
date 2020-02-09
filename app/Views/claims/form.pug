@@ -1,99 +1,118 @@
-extends layout/layout
+extends ../layout/layout
+
+block header-content
+  h1
+    i.fas.fa-file-signature
+    span Réclamations
 
 block content
-
-    div.containerForm.d-flex.justify-content-center.align-items-center
-        div.form
-            b FORMULAIRE DE RÉCLAMATION
-            div.border-top.my-3
-            form()
+    +navbar
+    +page-cover
+    .container
+        h1 FORMULAIRE DE RÉCLAMATION
+        br
+        form.form
+            fieldset
+                legend Renseignements sur le sinistre
+                .row
+                    .col
+                        .form-group
+                            label Date du sinistre
+                            input.form-control(type='date' name="dateSinister")
+                    .col
+                        .form-group
+                            label Type du sinistre
+                            select(name="type").form-control
+                                option(selected='') Inondation
+                                option Mouvement de sol, érosion ou submersion
+                                option Tremblement de terre
+                                option Verglas
+                                option Autre
+            fieldset
+                legend Renseignements sur l'identité du demandeur
+                .row
+                    .col
+                        .form-group
+                            label Nom
+                            input.form-control(type='text' name="name")
+                    .col
+                        .form-group
+                            label Prénom
+                            input.form-control(type='text' name="firstName")
+                .row
+                    .col
+                        .form-group
+                            label Sexe
+                            select(name="sexe").form-control
+                                option(selected='') Homme
+                                option Femme
+                    .col
+                        .form-group
+                            label Date de naissance
+                            input.form-control(type='text' placeholder="MM/JJ/AAAA" name="birthDate")
+                .row
+                    .col
+                        .form-group
+                            label Adresse courriel
+                            input.form-control(type='text' name="email")
                 .form-row
-                    .form-group.col-md-2
-                        label Date du sinistre
-                        input.form-control(type='date' name="dateSinister")
-                    .form-group.col-md-2
-                        label Type du sinistre
-                        select(name="type").form-control
-                            option(selected='') Inondation
-                            option Mouvement de sol, érosion ou submersion
-                            option Tremblement de terre
-                            option Verglas
-                            option Autre
+                    .col
+                        .form-group
+                            label No.tel.(Résidence)
+                            input.form-control(type='text' placeholder="" name="phoneRes")
+                    .col
+                        .form-group
+                            label No.tel.(Cellulaire)
+                            input.form-control(type='text' name="phoneCell")
+                    .col
+                        .form-group
+                            label No.tel.(Travail)
+                            input.form-control(type='text' placeholder="" name="phoneWork")
+                    .col
+                        .form-group
+                            label Poste
+                            input.form-control(type='text' name="phonePost")
 
-                b 1 RENSEIGNEMENTS SUR L’IDENTITÉ DU DEMANDEUR
-                div.border-top.my-3
-
-                .form-row
-                    .form-group.col-md-2
-                        label Nom
-                        input.form-control(type='text' name="name")
-                    .form-group.col-md-2
-                        label Prénom
-                        input.form-control(type='text' name="firstName")
-                    .form-group.col-md-2
-                        label Sexe
-                        select(name="sexe").form-control
-                            option(selected='') Homme
-                            option Femme
-
-                .form-row
-                    .form-group.col-md-2
-                        label Date de naissance
-                        input.form-control(type='text' placeholder="MM/JJ/AAAA" name="birthDate")
-                    .form-group.col-md-4
-                        label Adresse couriel
-                        input.form-control(type='text' name="email")
-                .form-row
-                    .form-group.col-md-3
-                        label No.tel.(Résidence)
-                        input.form-control(type='text' placeholder="" name="phoneRes")
-                    .form-group.col-md-3
-                        label No.tel.(Cellulaire)
-                        input.form-control(type='text' name="phoneCell")
-                .form-row
-                    .form-group.col-md-3
-                        label No.tel.(Travail)
-                        input.form-control(type='text' placeholder="" name="phoneWork")
-                    .form-group.col-md-2
-                        label Poste
-                        input.form-control(type='text' name="phonePost")
-
-
-                b ADRESSE DE LA RÉSIDENCE PRINCIPALE ENDOMMAGÉE
-                div.border-top.my-3
-
-                .form-row
-                    .form-group.col-md-4
-                        label Adresse
-                        input.form-control(type='text' placeholder="" name="adress")
-                    .form-group.col-md-2
-                        label Casier postal
-                        input.form-control(type='text' name="postalCase")
-                .form-row
-                    .form-group.col-md-4
-                        label Municipalité
-                        input.form-control(type='text' placeholder="" name="municipality")
-                    .form-group.col-md-2
-                        label Code postal
-                        input.form-control(type='text' name="postalCode")
-
-                b ADRESSE DE CORRESPONDANCE
+            fieldset
+                legend Adresse de la résidence principale endommagée
+                .row
+                    .col
+                        .form-group
+                            label Adresse
+                            input.form-control(type='text' placeholder="" name="adress")
+                    .col
+                        .form-group
+                            label Municipalité
+                            input.form-control(type='text' placeholder="" name="municipality")
+                .row
+                    .col
+                        .form-group
+                            label Casier postal
+                            input.form-control(type='text' name="postalCase")
+                    .col
+                        .form-group
+                            label Code postal
+                            input.form-control(type='text' name="postalCode")
+            fieldset
+                legend Adresse de correspondance
                 p (si différente de celle de la résidence principale endommagée)
-                div.border-top.my-3
+                .row
+                    .col
+                        .form-group
+                            label Adresse
+                            input.form-control(type='text' placeholder="" name="adress2")
+                    .col
+                        .form-group
+                            label Casier postal
+                            input.form-control(type='text' name="postalCase2")
+                .row
+                    .col
+                        .form-group
+                            label Municipalité
+                            input.form-control(type='text' name="municipality2")
+                    .col
+                        .form-group
+                            label Code postal
+                            input.form-control(type='text' name="postalCode2")
 
-                .form-row
-                    .form-group.col-md-4
-                        label Adresse
-                        input.form-control(type='text' placeholder="" name="adress2")
-                    .form-group.col-md-2
-                        label Casier postal
-                        input.form-control(type='text' name="postalCase2")
-                .form-row
-                    .form-group.col-md-4
-                        label Municipalité
-                        input.form-control(type='text' name="municipality2")
-                    .form-group.col-md-2
-                        label Code postal
-                        input.form-control(type='text' name="postalCode2")
-
-                button.btn.btn-primary(type='submit') Sign in
+            button.btn.mb-4.btn-success(type='submit') Sauvegarder

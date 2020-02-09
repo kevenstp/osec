@@ -14,51 +14,30 @@ block content
     h1 Notes
     br
     .row
-      .col.mb-4
-        .card.card-body.p-0
-          .position-relative
-            .cover-image(style="background-image: url('/assets/test-banner.jpg');")
+      each post in posts
+        .col.mb-4
+          .card.card-body.p-0
+            .position-relative
+              button.cover-image(type="button" data-toggle="modal" data-target="#postNo"+post.id style="background-image: url('/assets/test-banner.jpg');")
+                .over-div.position-relative
+                  .position-absolute.over-corner.flex-column
+                  br
+                  .text-center.text-white.mb-3.ml-2.mr-2
+                    h5=post.title
+                  .pb-5
+              .black-filter
+              .dot-filter
+        .modal.fade(id="postNo"+post.id tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+          .modal-dialog.modal-dialog-centered(role='document')
+            .modal-content(style="background-image: url('/assets/test-banner.jpg');")
               .over-div.position-relative
                 .position-absolute.over-corner.flex-column
                 br
                 .text-center.text-white.mb-3.ml-2.mr-2
-                  h5: a.hover-dark(href="#") Allo
+                  h5=post.title
+                  br
+                  p=post.content
                 .pb-5
-            .black-filter
-            .dot-filter
-      .col.mb-4
-        .card.card-body.p-0
-          .position-relative
-            .cover-image(style="background-image: url('/assets/test-banner.jpg');")
-              .over-div.position-relative
-                .position-absolute.over-corner.flex-column
-                br
-                .text-center.text-white.mb-3
-                  h5: a.hover-dark(href="#") AlloAlloAlloAlloAlloAlloAlloAlloAllo
-                .pb-5
-            .black-filter
-            .dot-filter
-      .col.mb-4
-        .card.card-body.p-0
-          .position-relative
-            .cover-image(style="background-image: url('/assets/test-banner.jpg');")
-              .over-div.position-relative
-                .position-absolute.over-corner.flex-column
-                br
-                .text-center.text-white.mb-3
-                  h5: a.hover-dark(href="#") AlloAlloAlloAlloAlloAllos
-                .pb-5
-            .black-filter
-            .dot-filter
-      .col.mb-4
-        .card.card-body.p-0
-          .position-relative
-            .cover-image(style="background-image: url('/assets/test-banner.jpg');")
-              .over-div.position-relative
-                .position-absolute.over-corner.flex-column
-                br
-                .text-center.text-white.mb-3
-                  h5: a.hover-dark(href="#") AlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAlloAllo
-                .pb-5
-            .black-filter
-            .dot-filter
+              .black-filter
+              .dot-filter
+
