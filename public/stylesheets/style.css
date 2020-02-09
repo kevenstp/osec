@@ -299,6 +299,12 @@ textarea {
     height : 100px;
 }
 
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+}
+
 .card .position-relative h5 {
     white-space: nowrap !important
 }
