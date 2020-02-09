@@ -1,6 +1,5 @@
 <?php namespace Controllers;
 
-
 use Models\Brokers\FormBroker;
 use Zephyrus\Network\Response;
 
@@ -10,7 +9,7 @@ class FormController extends Controller
     public function render($page, $args = []): Response
     {
         $args['title'] = 'Réclamation';
-        return parent::render('forms/' . $page, $args);
+        return parent::render('claims/' . $page, $args);
     }
 
     public function initializeRoutes()
@@ -23,15 +22,15 @@ class FormController extends Controller
     }
 
     public function renderClaimState($id) {
-        return $this->render("claims/claim-state");
+        return $this->render("claim-state");
     }
 
     public function renderClaims() {
-        return $this->render("claims/claim-list");
+        return $this->render("claim-list");
     }
 
     public function renderClaimForm() {
-        return $this->render("claims/claim-form");
+        return $this->render("claim-form");
     }
 
     public function renderForm()

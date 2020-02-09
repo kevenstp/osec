@@ -3,8 +3,6 @@
 
 namespace Models\Brokers;
 
-
-use Models\BaseBroker;
 use stdClass;
 
 class CityBroker extends BaseBroker

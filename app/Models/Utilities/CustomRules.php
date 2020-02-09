@@ -1,4 +1,4 @@
-<?php namespace Utilities;
+<?php namespace Models\Utilities;
 
 use Zephyrus\Application\Rule;
 

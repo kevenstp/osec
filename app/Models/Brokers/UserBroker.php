@@ -1,7 +1,6 @@
 <?php namespace Models\Brokers;
 
 
-use Models\BaseBroker;
 use stdClass;
 
 class UserBroker extends BaseBroker
@@ -19,12 +18,12 @@ class UserBroker extends BaseBroker
 
     public function findByEmail($email)
     {
-        return $this->selectSingle("SELECT * FROM `User` WHERE primaryMailAddress=?", [$email]);
+        return $this->selectSingle("SELECT * FROM `User` WHERE email=?", [$email]);
     }
 
     public function insert($user): string
     {
-        $sql = "INSERT INTO `User` (id, firstname, lastname, role, birthDate, homePhoneNumber, cellPhoneNumber, workPhoneNumber, primaryMailAddress)
+        $sql = "INSERT INTO `User` (id, firstname, lastname, role, birthDate, homePhoneNumber, cellPhoneNumber, workPhoneNumber, email)
                 VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?)";
         $this->query($sql, [
            $user->firstname,
@@ -34,7 +33,7 @@ class UserBroker extends BaseBroker
            $user->homePhoneNumber,
            $user->cellPhoneNumber,
            $user->workPhoneNumber,
-           $user->primaryMailAddress
+           $user->email
         ]);
         return $this->getDatabase()->getLastInsertedId();
     }
@@ -47,7 +46,7 @@ class UserBroker extends BaseBroker
 
     public function update(stdClass $user): string
     {
-        $sql = "UPDATE `User` SET id=?, firstname=?, lastname=?, role=?, birthDate=?, homePhoneNumber=?, cellPhoneNumber=?, workPhoneNumber=?, primaryMailAddress=? WHERE id=?";
+        $sql = "UPDATE `User` SET id=?, firstname=?, lastname=?, role=?, birthDate=?, homePhoneNumber=?, cellPhoneNumber=?, workPhoneNumber=?, email=? WHERE id=?";
         $this->query($sql, [
             $user->firstname,
             $user->lastname,
@@ -56,7 +55,7 @@ class UserBroker extends BaseBroker
             $user->homePhoneNumber,
             $user->cellPhoneNumber,
             $user->workPhoneNumber,
-            $user->primaryMailAddress,
+            $user->email,
             $user->id
         ]);
         return $user->id;
