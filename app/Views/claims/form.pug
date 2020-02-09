@@ -1,10 +1,11 @@
-extends layout/layout
+extends ../layout/layout
 
 block content
-
+    +navbar
+    +page-cover
     div.containerForm.d-flex.justify-content-center.align-items-center
         div.form
-            b FORMULAIRE DE RÉCLAMATION
+            h2 FORMULAIRE DE RÉCLAMATION
             div.border-top.my-3
             form()
                 .form-row
