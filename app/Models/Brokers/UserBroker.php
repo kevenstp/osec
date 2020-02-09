@@ -11,7 +11,7 @@ class UserBroker extends BaseBroker
         return $this->select("SELECT * FROM `User`", []);
     }
 
-    public function findById($id)
+    public function findById(int $id)
     {
         return $this->selectSingle("SELECT * FROM `User` WHERE id=?", [$id]);
     }
@@ -21,10 +21,10 @@ class UserBroker extends BaseBroker
         return $this->selectSingle("SELECT * FROM `User` WHERE email=?", [$email]);
     }
 
-    public function insert($user): string
+    public function insert(stdClass $user): string
     {
-        $sql = "INSERT INTO `User` (id, firstname, lastname, role, birthDate, homePhoneNumber, cellPhoneNumber, workPhoneNumber, email)
-                VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `User` (id, firstname, lastname, role, birthDate, homePhoneNumber, cellPhoneNumber, workPhoneNumber, email, password)
+                VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $this->query($sql, [
            $user->firstname,
            $user->lastname,
@@ -33,20 +33,15 @@ class UserBroker extends BaseBroker
            $user->homePhoneNumber,
            $user->cellPhoneNumber,
            $user->workPhoneNumber,
-           $user->email
+           $user->email,
+           $user->password
         ]);
         return $this->getDatabase()->getLastInsertedId();
     }
 
-    public function insertWithAddress($user)
-    {
-        $this->insert($user);
-        //$sql = "INSERT INTO ";
-    }
-
     public function update(stdClass $user): string
     {
-        $sql = "UPDATE `User` SET id=?, firstname=?, lastname=?, role=?, birthDate=?, homePhoneNumber=?, cellPhoneNumber=?, workPhoneNumber=?, email=? WHERE id=?";
+        $sql = "UPDATE `User` SET id=?, firstname=?, lastname=?, role=?, birthDate=?, homePhoneNumber=?, cellPhoneNumber=?, workPhoneNumber=?, email=?, password=? WHERE id=?";
         $this->query($sql, [
             $user->firstname,
             $user->lastname,
@@ -56,12 +51,13 @@ class UserBroker extends BaseBroker
             $user->cellPhoneNumber,
             $user->workPhoneNumber,
             $user->email,
+            $user->password,
             $user->id
         ]);
         return $user->id;
     }
 
-    public function delete($id)
+    public function delete(int $id)
     {
         $this->query("DELETE * FROM `User` WHERE id=?", [$id]);
     }

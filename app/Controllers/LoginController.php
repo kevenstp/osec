@@ -1,6 +1,7 @@
 <?php namespace Controllers;
 
 
+use Zephyrus\Application\Session;
 use Zephyrus\Network\Response;
 
 use Models\Brokers\CityBroker;
@@ -35,9 +36,8 @@ class LoginController extends Controller
         $userBroker = new UserBroker();
         $form = (object)$this->buildForm()->getFields();
         $user = $userBroker->findByEmail($form->email);
-
         if(!is_null($user) && Cryptography::verifyHash($form->password, $user->password)) {
-
+            Session::getInstance()->set("userId", $user->id);
             return $this->redirect("/accueil");
         }
 
@@ -57,26 +57,33 @@ class LoginController extends Controller
 
     public function registerUser()
     {
-        $user = (object)$this->buildForm()->getFields();
+        $form = (object)$this->buildForm()->getFields();
 
-        if ($user->password == $user->confirmPassword) {
+        if ($form->password != $form->confirmPassword) {
             Flash::error("Les mots de passes doivent concorder.");
-            return $this->redirect("/");
+            return $this->redirect("/inscription");
         }
 
         $userBroker = new UserBroker();
 
-        if ($userBroker->findByEmail($user->email)) {
+        if (!is_null($userBroker->findByEmail($form->email))) {
             Flash::error("Courriel déjà utilisé.");
-            return $this->redirect("/");
+            return $this->redirect("/inscription");
         }
 
-        $user->role = "resident";
-        $user->birthDate = null;
-        $user->homePhoneNumber = null;
-        $user->cellPhoneNumber = null;
-        $user->workPhoneNumber = null;
-        $user->id = $userBroker->insert($user);
+        $form->password = Cryptography::hash($form->password);
+        $form->role = "resident";
+        $form->birthDate = null;
+        $form->homePhoneNumber = null;
+        $form->cellPhoneNumber = null;
+        $form->workPhoneNumber = null;
+        $form->id = $userBroker->insert($form);
 
+        $form->floodId = null;
+        $form->postOfficeBox = null;
+
+        Flash::success("Compte créé avec succès");
+
+        return $this->redirect('/');
     }
 }

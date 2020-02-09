@@ -391,7 +391,7 @@ a {
     font-size: 1.1rem;
 }
 
-#page-cover-content input {
+#page-cover-content input, #page-cover-content select {
     background: #1761a0;
     color : white;
     font-size: 0.8rem;
