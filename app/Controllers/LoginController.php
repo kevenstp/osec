@@ -1,8 +1,16 @@
 <?php namespace Controllers;
 
 
+use Zephyrus\Network\Response;
+
 class LoginController extends Controller
 {
+
+    public function render($page, $args = []): Response
+    {
+        $args['title'] = 'Login';
+        return parent::render('authentication/' . $page, $args);
+    }
 
     public function initializeRoutes()
     {
