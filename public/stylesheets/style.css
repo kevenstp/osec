@@ -670,5 +670,10 @@ legend {
     height : 100%;
 }
 
+.padding-v4 {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
 .round8 {border-radius: 8px;}
 .round12 {border-radius: 12px;}
