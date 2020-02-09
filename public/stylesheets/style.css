@@ -305,8 +305,12 @@ h3 {
     font-size: 1.3rem;
 }
 
+.card .position-relative {
+    text-overflow: ellipsis;
+}
+
 .card .position-relative h5 {
-    white-space: nowrap !important
+    white-space: nowrap !important;
 }
 
 .hover-dark {
@@ -814,4 +818,12 @@ legend {
     background: #e0bf05;
     height: 20px;
     width: 20px;
+}
+
+.a-no-color {
+    color: white;
+}
+
+.a-no-color:hover {
+    color: white;
 }
