@@ -67,9 +67,10 @@ mixin navbar()
             a.mr-3.hover-dark.navbar-link.animated-line(href="/reclamations") Réclamations
             //+form("get", "alerte")(enctype="multipart/form-data")
             if danger
-                button.fa.fa-exclamation-circle.btn-danger.round12.padding-v4
+                button.fa.fa-exclamation-circle.btn-danger.round12.padding-v4.mr-3
             else
-                button.fa.fa-exclamation-circle.btn-success.round12.padding-v4
+                button.fa.fa-exclamation-circle.btn-success.round12.padding-v4.mr-3
+            button.fa.fa-users-cog.round12.padding-v4.mr-3
             //audio#notif-sound(src='/assets/sounds/notification.mp3' preload='auto' controls='none' volume='0.1' style="display:none")
 //-
   Allows usage HTTP method besides GET and POST. Zephyrus verifies the existence of a __method
