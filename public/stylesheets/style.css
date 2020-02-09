@@ -298,10 +298,6 @@ textarea {
     height : 100px;
 }
 
-.card .position-relative h5 {
-    white-space: nowrap !important
-}
-
 .hover-dark {
     color : #f3f3f3;
     -webkit-transition: 0.2s ease-in-out!important;
@@ -627,6 +623,18 @@ legend::before {
     border-radius: 15px;
 }
 
+.hover-light {
+    font-size: 0.9rem;
+    -webkit-transition: 0.2s ease-in-out!important;
+    color: #404040;
+}
+
+.hover-light:hover {
+    text-decoration: none;
+    color : #808080;
+    -webkit-transition: 0.2s ease-in-out;
+}
+
 legend {
     font-size: 1.2rem;
     color : #606060;
@@ -731,11 +739,13 @@ legend {
 .clickable {
     text-decoration: none;
     color: #00B7FF;
+    -webkit-transition: 0.2s ease-in-out;
 }
 
 .clickable:hover {
     cursor: pointer;
     text-decoration: none;
+    -webkit-transition: 0.2s ease-in-out;
 }
 
 .margin-side-8 { margin-left: 8px; margin-right: 8px; }
