@@ -611,7 +611,7 @@ fieldset {
     margin-bottom: 24px;
 }
 
-legend:before {
+legend::before {
     counter-increment: section;
     content: counter(section);
     margin-right: 8px;
