@@ -475,6 +475,199 @@ hr {
     letter-spacing: 2px;
 }
 
+#guide1 {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: white;
+}
+
+#guide2 {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #003366;
+}
+
+
+#guide3 {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #CCCC99;
+}
+
+.spacer {
+    height:10%;
+    width: 100%;
+}
+
+.spacer2 {
+    height:5%;
+    width: 100%;
+}
+
+.blueSky {
+    color: #003366;
+    font-weight: bolder;
+}
+
+.beige {
+    color: #CCCC99;
+}
+
+.white {
+    color: white;
+}
+
+.magenta {
+    color: #14145a;
+}
+
+.centerText{
+    text-align: center;
+}
+
+#page-cover {
+    margin-top: 30px;
+}
+
+#page-cover > h1, .profile-information-cover h1:first-of-type {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+#page-cover > h1 > span:first-of-type {
+    font-size: 2rem;
+}
+
+#page-cover > h1 > i {
+    font-size: 1.8rem;
+    margin-right: 8px;
+}
+
+#page-cover > h1 > span:not(:first-of-type) {
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+#page-cover > h1 > span:not(:last-of-type):after {
+    content: "/";
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: #e9e9e9;
+    font-size: 1rem;
+    position: relative;
+    top: -2px;
+}
+
+#page-cover > h1 > span > a {
+
+}
+
+.actions-section {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    bottom : -86px;
+    border-radius: 4px;
+}
+
+.actions-section a {
+    margin-right: 8px;
+}
+
+.action-button {
+    background-color: #606060;
+    color : white;
+}
+
+.action-button:hover {
+    color : white;
+    background-color: #454545;
+}
+
+.round-button i {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+}
+
+.round-button {
+    border : 1px solid white;
+    width : 32px;
+    height : 32px;
+    border-radius: 16px;
+    background-color: #252525;
+    text-align: center;
+    vertical-align: middle;
+}
+
+fieldset {
+    margin-bottom: 24px;
+}
+
+legend:before {
+    counter-increment: section;
+    content: counter(section);
+    margin-right: 8px;
+    background: #404040;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px;
+}
+
+legend {
+    color : #404040;
+    font-size: 1rem;
+}
+
+legend:before {
+    counter-increment: section;
+    content: counter(section);
+    margin-right: 8px;
+    background: #606060;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0;
+}
+
+legend {
+    font-size: 1.2rem;
+    color : #606060;
+    margin-bottom: 16px;
+}
+
+.post-it {
+    border-radius: 8px;
+    width : 25%;
+    height : 25%;
+    background-color: #f0f0f0;
+}
+
+.thick-line {
+    margin-bottom: 8px;
+    width: 60px;
+    border-bottom: 2px solid #808080;
+}
+
 /*******************weather*******************/
 
 #weather .icon > img {

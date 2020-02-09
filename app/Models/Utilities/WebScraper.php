@@ -1,10 +1,10 @@
-<?php namespace Controllers;
+<?php namespace Models\Utilities;
 
-class ScraperController extends Controller
+class WebScraper
 {
-    public function initializeRoutes()
+    public function __WebScraper()
     {
-        $this->get("/surveillance", "renderSurveillance");
+
     }
 
     private function getDOM(string $url) : \DOMDocument
@@ -19,15 +19,12 @@ class ScraperController extends Controller
      *  Surveillance de la crue des eaux;
      */
 
-    public function renderSurveillance()
+    public function getSurveillance()
     {
         $url = "https://geoegl.msp.gouv.qc.ca/adnv2/";
         $dom = $this->getDOM($url);
         $rows = $this->getRows($dom);
-        $this->render("surveillance", [
-            'title' => 'Surveillance de la crue des eaux',
-            'rows' => $rows
-        ]);
+        return $rows;
     }
 
     private function getRows(\DOMDocument $dom) : \stdClass
