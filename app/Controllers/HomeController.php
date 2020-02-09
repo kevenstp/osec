@@ -1,20 +1,19 @@
 <?php namespace Controllers;
 
-use Models\Item;
+use Utilities\WebScraper;
 
 class HomeController extends Controller
 {
-
     public function initializeRoutes()
     {
         $this->get("/accueil", "renderHome");
     }
 
     public function renderHome() {
-        $surveillance = WebScraper::getSurveillance();
+        $surveillance = new WebScraper();
         return $this->render('home', [
             "title" => "õsec - Accueil",
-            "surveillance" => $surveillance
+            "surveillance" => $surveillance->getSurveillance()
         ]);
     }
 

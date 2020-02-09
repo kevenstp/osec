@@ -2,6 +2,11 @@
 
 class WebScraper
 {
+    public function __WebScraper()
+    {
+
+    }
+
     private function getDOM(string $url) : \DOMDocument
     {
         libxml_use_internal_errors(true);
@@ -14,11 +19,11 @@ class WebScraper
      *  Surveillance de la crue des eaux;
      */
 
-    public static function getSurveillance()
+    public function getSurveillance()
     {
         $url = "https://geoegl.msp.gouv.qc.ca/adnv2/";
-        $dom = self::getDOM($url);
-        $rows = self::getRows($dom);
+        $dom = $this->getDOM($url);
+        $rows = $this->getRows($dom);
         return $rows;
     }
 
