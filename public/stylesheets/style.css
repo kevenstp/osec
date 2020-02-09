@@ -2,7 +2,7 @@
 @import "vendor/all.min.css";
 
 html, body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Lato', sans-serif;
     width : 100%;
     height : 100%;
 }
@@ -12,12 +12,20 @@ h1 {
     letter-spacing: 2px;
 }
 
+h1 span{
+    margin-left: 8px;
+}
+
 .cover-image {
     width: 100%;
     height : 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.jumbotron h1 {
+    font-size: 2rem;
 }
 
 .black-filter {
@@ -100,6 +108,15 @@ h1 {
     position : relative;
 }
 
+.jumbotron .over-div {
+    margin-top: 16px;
+}
+
+#container {
+    width : 100%;
+    height : 100%;
+}
+
 .animated-line {
     display: inline-block;
     color: #000;
@@ -148,10 +165,8 @@ h1 {
     padding : 0;
 }
 
-body, html {
-    width: 100%;
-    height: 100%;
-    font-family: 'Work Sans', sans-serif;
+.jumbotron {
+    border-radius: 0;
 }
 
 a {
@@ -204,24 +219,18 @@ a {
 }
 
 #page-cover-content {
-    height : 500px;
     position: absolute;
     z-index: 500;
-    top: 50%;
-    left: 50%;
     color: black;
     border-radius : 1rem;
     width: 40%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
 }
 
-#page-cover-content .form-control::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
-#page-cover-content .form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
-#page-cover-content .form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
-#page-cover-content .form-control:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
-#page-cover-content .form-control::-ms-input-placeholder { color: white; }
+#page-cover-content .form-control::-webkit-input-placeholder { color: white; opacity: 0.5; }  /* WebKit, Blink, Edge */
+#page-cover-content .form-control:-moz-placeholder { color: white; opacity: 0.5; }  /* Mozilla Firefox 4 to 18 */
+#page-cover-content .form-control::-moz-placeholder { color: white; opacity: 0.5; }  /* Mozilla Firefox 19+ */
+#page-cover-content .form-control:-ms-input-placeholder { color: white; opacity: 0.5; }  /* Internet Explorer 10-11 */
+#page-cover-content .form-control:-ms-input-placeholder { color: white; opacity: 0.5; }
 
 #page-cover-content img {
     width : 125px;
@@ -381,10 +390,10 @@ a {
 }
 
 #page-cover-content input {
-    background: #1e3c72;
+    background: #1761a0;
     color : white;
     font-size: 0.8rem;
-    opacity: 0.8;
+    opacity: 0.7;
     border: none;
     height : 60px;
     margin-bottom: 16px;
@@ -398,17 +407,11 @@ a {
 #page-cover-content h1 {
     color: white;
     letter-spacing: 4px;
-    font-family: 'Calistoga', cursive;
+    font-family: 'Flamenco', cursive;
 }
 
-.dot-filter {
-    z-index: 3;
-    opacity: 0.5;
-    height : 100%;
-    position: absolute;
-    width : 100%;
-    top : 0;
-    background-image: url("../assets/dotgrid.png");
+#container .jumbotron:first-of-type {
+    height: 300px;
 }
 
 .cover-image {
@@ -425,5 +428,26 @@ a {
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+}
+
+.containerForm {
+    width: 100%;
+    height: 100%;
+}
+
+.form {
+    height: 80%;
+    width: 80%;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    letter-spacing: 2px;
 }
 
