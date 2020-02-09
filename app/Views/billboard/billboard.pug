@@ -18,10 +18,14 @@ block content
         .col.mb-4
           .card.card-body.p-0
             .position-relative
-              button.cover-image(type="button" data-toggle="modal" data-target="#postNo"+post.id style="background-image: url('/assets/test-banner.jpg');")
+              button.btn-postit.cover-image(id=post.id type="button" data-toggle="modal" style="background-image: url('/assets/test-banner.jpg');")
                 .over-div.position-relative
                   .position-absolute.over-corner.flex-column
-                  br
+                  .row
+                    .col.text-center.text-posthead
+                      p=post.datetime
+                    //.col.text-right.text-posthead
+                      p=post.user.firstName +" "+ post.user.lastName
                   .text-center.text-white.mb-3.ml-2.mr-2
                     h5=post.title
                   .pb-5
@@ -32,12 +36,27 @@ block content
             .modal-content(style="background-image: url('/assets/test-banner.jpg');")
               .over-div.position-relative
                 .position-absolute.over-corner.flex-column
-                br
-                .text-center.text-white.mb-3.ml-2.mr-2
+                .text-center.text-white.mb-3.ml-2.mr-2.pt-2
                   h5=post.title
                   br
                   p=post.content
-                .pb-5
+                  .ml-4
+                    .row.text-posthead
+                      .col-1
+                        i.fas.fa-clock
+                      p=post.datetime
+                    .row.text-posthead
+                      .col-1
+                        i.fas.fa-user
+                      p=post.user.firstName + " " + post.user.lastName
+                    .row.text-posthead
+                      .col-1
+                        i.fas.fa-phone
+                      p=post.user.cellPhoneNumber
+                    .row.text-posthead
+                      .col-1
+                        i.fas.fa-envelope
+                      p=post.user.email
               .black-filter
               .dot-filter
   #exampleModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
@@ -74,4 +93,15 @@ block content
           .pb-5
         .black-filter
         .dot-filter
+
+  script(nonce=nonce()).
+    $(".btn-postit").on("click", function () {
+        $(this).css('opacity', '0');
+        var modal = "#postNo"+$(this)[0].id;
+        $(modal).modal("show");
+    })
+
+    $(modal).on("hide.bs.modal", function (e) {
+        $(this).css('opacity', '1');
+    });
 
