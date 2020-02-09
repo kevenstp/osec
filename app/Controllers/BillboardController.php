@@ -19,6 +19,9 @@ class BillboardController extends Controller
     {
         $broker = new BillboardBroker();
         $posts = $broker->findAll();
-        return $this->render("billboard/billboard");
+        return $this->render("billboard/billboard",
+            [
+                "posts" => $posts
+            ]);
     }
 }
