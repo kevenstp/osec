@@ -3,7 +3,7 @@
 
 use stdClass;
 
-class UserBroker extends BaseBroker
+class UserBroker
 {
 
     public function findAll(): array
