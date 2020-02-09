@@ -1,8 +1,16 @@
 <?php namespace Controllers;
 
 
+use Zephyrus\Network\Response;
+
 class FormController extends Controller
 {
+
+    public function render($page, $args = []): Response
+    {
+        $args['title'] = 'Réclamation';
+        return parent::render('forms/' . $page, $args);
+    }
 
     public function initializeRoutes()
     {
