@@ -39,6 +39,11 @@ class UserBroker extends BaseBroker
         return $this->getDatabase()->getLastInsertedId();
     }
 
+    public function insertHome($userId, $homeId)
+    {
+        $this->query("INSERT INTO UserHome (userId, homeId) VALUES (?, ?)", [$userId, $homeId]);
+    }
+
     public function update(stdClass $user): string
     {
         $sql = "UPDATE `User` SET id=?, firstname=?, lastname=?, role=?, birthDate=?, homePhoneNumber=?, cellPhoneNumber=?, workPhoneNumber=?, email=?, password=? WHERE id=?";

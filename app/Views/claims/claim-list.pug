@@ -3,15 +3,44 @@ extends ../layout/layout
 block header-content
   h1
     i.fas.fa-file-signature
+    span
+      a(href="/accueil").a-no-color Accueil
     span Réclamation
 
 block content
   +navbar
   +page-cover
   .container
-    h1 Vos réclamations
+    h1 État
+    hr
     br
-    table.table
+    .claimCardsContainer
+      .row
+        +claimCardDisable("Étape 1", "2019-01-10", "#")
+        span.sequency-line-disable
+        +claimCard("Étape 2", "2019-02-10", "#")
+        span.sequency-line
+        +claimCardDisable("Étape 3", "2020-10-20", "#")
+        span.sequency-line-disable
+        +claimCardDisable("Étape 4", "2020-10-22", "#")
+        span.sequency-line-disable
+    br
+    hr
+    br
+    .margin-side-16
+      h3 Détail
+      .thick-line.claimCardsLine
+      .claimStepsContainer
+        fieldset
+          legend Étape 1
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      br
+      .claimStepsContainer
+        fieldset
+          legend Étape 2
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      br
+    //table.table
       thead
         th(scope="col") Date
       tbody

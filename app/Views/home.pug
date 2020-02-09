@@ -25,35 +25,37 @@ block content
                 .flex-column
                   i.fa.fa-temperature-low
                   span #{weather.main.humidity}%
-    h1 Carte intéractive
-    iframe(name="map" id="map" src="https://geoinondations.gouv.qc.ca/" width="100%" height="100%")
-    br
-    br
-    h1 Surveillance de la crue des eaux
-    table.table
-      thead
-        tr
-          th Plan d'eau
-          th Lieu d'observation
-          th État
-          th Tendance
-          th Variable hydrologique
-          th SIM
-          th Dernière mesure
-          th Numéro de station
-      tbody
-        each row in surveillance
+      table.table
+        thead
           tr
-            td=row.water
-            td=row.lieu
-            td=row.state
-            td=row.tendency
-            td=row.variable
-            td=row.sim
-            td=row.lastMeasure
-            td=row.number
-    br
-    br
+            th Plan d'eau
+            th Lieu d'observation
+            th État
+            th Tendance
+            th Variable hydrologique
+            th SIM
+            th Dernière mesure
+            th Numéro de station
+        tbody
+          each row in surveillance
+            tr
+              td=row.water
+              td=row.lieu
+              td=row.state
+              td=row.tendency
+              td=row.variable
+              td=row.sim
+              td=row.lastMeasure
+              td=row.number
+      br
+      br
+      h1 Carte interactive
+      br
+      br
+      iframe(name="map" id="map" src="https://geoinondations.gouv.qc.ca/" width="100%" height="100%")
+      br
+      br
+      br
 
 
 
