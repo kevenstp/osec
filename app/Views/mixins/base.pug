@@ -96,3 +96,13 @@ mixin claimCard(text, date, action)
         tbody
           tr
            td=date
+
+mixin claimCardDisable(text, date, action)
+  card.claimCardDisable
+    a(href=action).clickableDisable
+      table.claimCardTable
+        thead
+          th(scope="col")=text
+        tbody
+          tr
+           td=date
