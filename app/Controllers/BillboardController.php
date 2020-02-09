@@ -5,6 +5,7 @@ namespace Controllers;
 
 
 use Models\Brokers\BillboardBroker;
+use Models\Brokers\UserBroker;
 use Zephyrus\Application\Session;
 
 class BillboardController extends Controller
@@ -24,7 +25,13 @@ class BillboardController extends Controller
     public function renderBillboard()
     {
         $broker = new BillboardBroker();
+        $userBroker = new UserBroker();
         $posts = $broker->findAll();
+
+        foreach ($posts as $post) {
+            $post->user = $userBroker->findById($post->userId);
+        }
+
         return $this->render("billboard/billboard",
             [
                 "posts" => $posts
