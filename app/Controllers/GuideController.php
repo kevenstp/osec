@@ -1,18 +1,15 @@
 <?php namespace Controllers;
 
-use Models\Item;
 
 class GuideController extends Controller
 {
 
     public function initializeRoutes()
     {
-        $this->get("/guide", "/guideRendering");
+        $this->get("/guide", "renderGuide");
     }
 
-    public function guideRendering()
-    {
-
+    public function renderGuide() {
+        return $this->render("/guide/guide");
     }
-
 }

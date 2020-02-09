@@ -1,3 +1,11 @@
-extends layout/layout
+extends ../layout/layout
+
+block header-content
+  h1
+    i.fas.fa-book
+    span Guide
+
 
 block content
+  +navbar
+  +page-cover

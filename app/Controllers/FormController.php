@@ -10,7 +10,21 @@ class FormController extends Controller
     {
         $this->get("/form", "renderForm");
         $this->post("/form", "createForm");
+        $this->get("/reclamations", "renderClaims");
+        $this->get("/reclamation/demande", "renderClaimForm");
+        $this->get("/reclamation/{id}", "renderClaimState");
+    }
 
+    public function renderClaimState($id) {
+        return $this->render("claims/claim-state");
+    }
+
+    public function renderClaims() {
+        return $this->render("claims/claim-list");
+    }
+
+    public function renderClaimForm() {
+        return $this->render("claims/claim-form");
     }
 
     public function renderForm()
