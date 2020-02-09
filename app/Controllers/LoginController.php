@@ -3,6 +3,11 @@
 
 use Zephyrus\Network\Response;
 
+use Models\Brokers\CityBroker;
+use Models\Brokers\UserBroker;
+use Zephyrus\Application\Flash;
+use Zephyrus\Security\Cryptography;
+
 class LoginController extends Controller
 {
 
@@ -27,11 +32,51 @@ class LoginController extends Controller
 
     public function connectUser()
     {
+        $userBroker = new UserBroker();
+        $form = (object)$this->buildForm()->getFields();
+        $user = $userBroker->findByEmail($form->email);
 
+        if(!is_null($user) && Cryptography::verifyHash($form->password, $user->password)) {
+
+            return $this->redirect("/accueil");
+        }
+
+        Flash::error("Authentification invalide");
+        return $this->redirect("/");
     }
 
     public function renderRegister()
     {
-        return $this->render("register", ["title" => "õsec - Inscription"]);
+        $cityBroker = new CityBroker();
+
+        return $this->render("register", [
+            "title" => "õsec - Inscription",
+            "cities" => $cityBroker->findAll()
+        ]);
+    }
+
+    public function registerUser()
+    {
+        $user = (object)$this->buildForm()->getFields();
+
+        if ($user->password == $user->confirmPassword) {
+            Flash::error("Les mots de passes doivent concorder.");
+            return $this->redirect("/");
+        }
+
+        $userBroker = new UserBroker();
+
+        if ($userBroker->findByEmail($user->email)) {
+            Flash::error("Courriel déjà utilisé.");
+            return $this->redirect("/");
+        }
+
+        $user->role = "resident";
+        $user->birthDate = null;
+        $user->homePhoneNumber = null;
+        $user->cellPhoneNumber = null;
+        $user->workPhoneNumber = null;
+        $user->id = $userBroker->insert($user);
+
     }
 }

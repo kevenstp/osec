@@ -11,7 +11,7 @@ block content
           .vl-white
           h1 Inscription
         +flash()
-        form(action="/connexion", method="POST")
+        form(action="/inscription", method="POST")
           .row
             .col
               input.form-control(type='text', name="firstname" aria-describedby='usernameHelp', placeholder='Prénom')
@@ -22,17 +22,19 @@ block content
               input.form-control(type='text', name="email" aria-describedby='usernameHelp', placeholder='Courriel')
           .row
             .col
-              input.form-control(type='password', name="confirmPassword", aria-describedby='passwordHelp', placeholder='Mot de passe')
+              input.form-control(type='password', name="password", aria-describedby='passwordHelp', placeholder='Mot de passe')
             .col
-              input.form-control(type='password', name="password", aria-describedby='passwordHelp', placeholder='Confirmer le mot de passe')
+              input.form-control(type='password', name="confirmPassword", aria-describedby='passwordHelp', placeholder='Confirmer le mot de passe')
           .row
             .col
               input.form-control(type='text', name="address" aria-describedby='usernameHelp', placeholder='Adresse')
           .row
             .col
-              input.form-control(type='text', name="city" aria-describedby='usernameHelp', placeholder='Ville')
+              select.form-control(name="cityId" aria-describedby='usernameHelp')
+                each city in cities
+                  option(value=city.id)=city.name
             .col
-              input.form-control(type='text', name="zip" aria-describedby='usernameHelp', placeholder='Code postal')
+              input.form-control(type='text', name="postalCode" aria-describedby='usernameHelp', placeholder='Code postal')
 
           button.btn(type='submit') S'inscrire
     .blue-gradient-filter
