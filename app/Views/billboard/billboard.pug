@@ -18,12 +18,24 @@ block content
         .col.mb-4
           .card.card-body.p-0
             .position-relative
-              .cover-image(style="background-image: url('/assets/test-banner.jpg');")
+              button.cover-image(type="button" data-toggle="modal" data-target="#exampleModal" style="background-image: url('/assets/test-banner.jpg');")
                 .over-div.position-relative
                   .position-absolute.over-corner.flex-column
                   br
                   .text-center.text-white.mb-3.ml-2.mr-2
-                    h5: a.hover-dark(href="#")=post.content
+                    h5 Allo
                   .pb-5
               .black-filter
               .dot-filter
+  #exampleModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content(style="background-image: url('/assets/test-banner.jpg');")
+        .over-div.position-relative
+          .position-absolute.over-corner.flex-column
+          br
+          .text-center.text-white.mb-3.ml-2.mr-2
+            h5 Allo
+          .pb-5
+        .black-filter
+        .dot-filter
+
