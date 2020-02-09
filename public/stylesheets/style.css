@@ -719,12 +719,7 @@ legend {
 
 .clickable-disable {
     text-decoration: none;
-    color: rgba(0, 183, 255, 0.45);
-}
-
-.clickable {
-    text-decoration: none;
-    color: #00B7FF;
+    color: rgba(0, 183, 255, 0.3);
 }
 
 .claimCard {
@@ -753,11 +748,6 @@ legend {
     color: gainsboro;
 }
 
-.clickable:hover {
-    cursor: pointer;
-    text-decoration: none;
-}
-
 .sequency-line {
     margin-top: auto;
     margin-bottom: auto;
@@ -775,7 +765,7 @@ legend {
     height: 0.1rem;
     margin-left: 2px;
     margin-right: 2px;
-    background-color: rgba(183, 183, 183, 0.41);
+    background-color: rgba(183, 183, 183, 0.51);
     display: flex;
     flex-grow: 1;
 }
@@ -799,13 +789,6 @@ legend {
 .clickable {
     text-decoration: none;
     color: #00B7FF;
-    -webkit-transition: 0.2s ease-in-out;
-}
-
-.clickable:hover {
-    cursor: pointer;
-    text-decoration: none;
-    -webkit-transition: 0.2s ease-in-out;
 }
 
 .margin-side-8 { margin-left: 8px; margin-right: 8px; }

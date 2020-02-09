@@ -89,7 +89,7 @@ mixin form(method, action)
 
 mixin claimCard(text, date, action)
   card.claimCard
-    a(href=action).clickable
+    span(href=action).clickable
       table.claimCardTable
         thead
           th(scope="col")=text
@@ -99,7 +99,7 @@ mixin claimCard(text, date, action)
 
 mixin claimCardDisable(text, date, action)
   card.claimCardDisable
-    a(href=action).clickableDisable
+    span.clickableDisable
       table.claimCardTable
         thead
           th(scope="col")=text
