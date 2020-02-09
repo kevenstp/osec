@@ -5,6 +5,7 @@ namespace Controllers;
 
 
 use Models\Brokers\BillboardBroker;
+use Models\Brokers\HomeBroker;
 use Models\Brokers\UserBroker;
 use Zephyrus\Application\Session;
 
@@ -26,10 +27,12 @@ class BillboardController extends Controller
     {
         $broker = new BillboardBroker();
         $userBroker = new UserBroker();
+        $homeBroker = new HomeBroker();
         $posts = $broker->findAll();
 
         foreach ($posts as $post) {
             $post->user = $userBroker->findById($post->userId);
+            $post->user->home = $homeBroker->findByUserId($post->user->id);
         }
 
         return $this->render("billboard/billboard",

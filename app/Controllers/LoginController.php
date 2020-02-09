@@ -1,6 +1,7 @@
 <?php namespace Controllers;
 
 
+use Models\Brokers\HomeBroker;
 use Zephyrus\Application\Session;
 use Zephyrus\Network\Response;
 
@@ -77,10 +78,17 @@ class LoginController extends Controller
         $form->homePhoneNumber = null;
         $form->cellPhoneNumber = null;
         $form->workPhoneNumber = null;
-        $form->id = $userBroker->insert($form);
+        $userId = $userBroker->insert($form);
+
+        $homeBroker = new HomeBroker();
 
         $form->floodId = null;
         $form->postOfficeBox = null;
+
+        $homeId = $homeBroker->insert($form);
+
+        $userBroker->insertHome($userId, $homeId);
+
 
         Flash::success("Compte créé avec succès");
 

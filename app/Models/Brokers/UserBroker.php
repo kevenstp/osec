@@ -3,7 +3,7 @@
 
 use stdClass;
 
-class UserBroker
+class UserBroker extends BaseBroker
 {
 
     public function findAll(): array
@@ -37,6 +37,11 @@ class UserBroker
            $user->password
         ]);
         return $this->getDatabase()->getLastInsertedId();
+    }
+
+    public function insertHome($userId, $homeId)
+    {
+        $this->query("INSERT INTO UserHome (userId, homeId) VALUES (?, ?)", [$userId, $homeId]);
     }
 
     public function update(stdClass $user): string

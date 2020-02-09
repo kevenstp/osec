@@ -26,6 +26,11 @@ class HomeBroker extends BaseBroker
         ', [$id]);
     }
 
+    public function findByUserId($id)
+    {
+        return $this->select('SELECT * FROM Home h JOIN UserHome u ON h.id = u.homeId WHERE u.userId', [$id]);
+    }
+
     public function insert(stdClass $stdClass): string
     {
         $this->query('
