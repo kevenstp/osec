@@ -670,6 +670,10 @@ legend {
     height : 100%;
 }
 
+.text-posthead {
+    color: #aaa;
+}
+
 .padding-v4 {
     padding-top: 4px;
     padding-bottom: 4px;
