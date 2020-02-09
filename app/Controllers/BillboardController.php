@@ -34,7 +34,6 @@ class BillboardController extends Controller
             $post->user = $userBroker->findById($post->userId);
             $post->user->home = $homeBroker->findByUserId($post->user->id);
         }
-
         return $this->render("billboard/billboard",
             [
                 "posts" => $posts

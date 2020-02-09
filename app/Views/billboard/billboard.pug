@@ -3,6 +3,8 @@ extends ../layout/layout
 block header-content
   h1
     i.fas.fa-sticky-note
+    span
+      a(href="/accueil").a-no-color Accueil
     span Babillard
   +actions-section
 
@@ -57,10 +59,11 @@ block content
                       .col-1
                         i.fas.fa-envelope
                       p=post.user.email
-                    .row.text-posthead
-                      .col-1
-                        i.fas.fa-map-marker-alt
-                      p=post.user.home.address
+                    each home in post.user.home
+                      .row.text-posthead
+                        .col-1
+                          i.fas.fa-map-marker-alt
+                        p=home.address
               .black-filter
               .dot-filter
   #exampleModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
@@ -101,10 +104,17 @@ block content
   script(nonce=nonce()).
     $(".btn-postit").on("click", function () {
         var modal = "#postNo"+$(this)[0].id;
+        var btn = this;
         $(modal).modal("show");
-    })
+        $(this).parent().find('.black-filter').css('opacity', 0);
+        $(this).parent().find('.dot-filter').css('opacity', 0);
+        $(this).css('opacity', 0);
 
-    $(modal).on("hide.bs.modal", function (e) {
-        $(this).css('opacity', '1');
-    });
+        $(modal).on("hide.bs.modal", function (e) {
+            $(btn).parent().find('.black-filter').css('opacity', 0.7);
+            $(btn).parent().find('.dot-filter').css('opacity', 0.5);
+            $(btn).css('opacity', 1);
+            $(btn).css('background-image', 'url(/assets/test-banner.jpg)');
+        });
+    })
 
