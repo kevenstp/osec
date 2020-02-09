@@ -475,6 +475,62 @@ hr {
     letter-spacing: 2px;
 }
 
+#guide1 {
+    width: 100%;
+    height: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: white;
+}
+
+#guide2 {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #003366;
+}
+
+
+#guide3 {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #CCCC99;
+}
+
+.spacer {
+    height:10%;
+    width: 100%;
+}
+
+.spacer2 {
+    height:5%;
+    width: 100%;
+}
+
+.blueSky {
+    color: #003366;
+    font-weight: bolder;
+}
+
+.beige {
+    color: #CCCC99;
+}
+
+.white {
+    color: white;
+}
+
+.magenta {
+    color: #14145a;
+}
+
+.centerText{
+    text-align: center;
+}
+
 #page-cover {
     margin-top: 30px;
 }
@@ -599,16 +655,39 @@ legend {
     margin-bottom: 16px;
 }
 
-.post-it {
-    border-radius: 8px;
-    width : 25%;
-    height : 25%;
-    background-color: #f0f0f0;
-}
-
 .thick-line {
     margin-bottom: 8px;
     width: 60px;
     border-bottom: 2px solid #808080;
 }
 
+.post-it-filter .black-filter {
+    opacity: 0;
+    border-radius: 8px;
+    -webkit-transition: 0.2s ease-in-out!important;
+}
+
+.post-it-filter:hover .black-filter {
+    opacity: 0.7;
+    -webkit-transition: 0.2s ease-in-out!important;
+}
+
+.post-it {
+    border-radius: 8px;
+    width : 25%;
+    height : 25%;
+    background-color: #f0f0f0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.post-it i {
+    font-size: 3rem;
+    color: white;
+}
+
+.post-it .over-div {
+    width: 100%;
+    height : 100%;
+}
