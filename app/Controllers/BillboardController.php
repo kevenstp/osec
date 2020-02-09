@@ -15,6 +15,6 @@ class BillboardController extends Controller
 
     public function renderBillboard()
     {
-
+        return $this->render("billboard/billboard");
     }
 }
