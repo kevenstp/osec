@@ -1,7 +1,4 @@
-<?php
-
-
-namespace Models\Utils;
+<?php namespace Utilities;
 
 
 use stdClass;

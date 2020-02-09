@@ -1,4 +1,4 @@
-<?php namespace Models\Utils;
+<?php namespace Utilities;
 
 use DateTime;
 use stdClass;

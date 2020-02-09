@@ -1,4 +1,4 @@
-<?php namespace Controllers;
+<?php namespace Utilities;
 
 class WebScraper
 {
