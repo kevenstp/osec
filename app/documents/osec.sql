@@ -94,12 +94,12 @@ INSERT INTO Weather (`timestamp`) VALUES (DEFAULT);
 INSERT INTO City (id, `name`, province, weatherTimestamp) VALUES (DEFAULT, 'Sorel-Tracy', 'QC', NULL);
 INSERT INTO WaterZone (id, `name`, waterLevel) VALUES (DEFAULT, 'Bas-Richelieu', 0);
 INSERT INTO CityWaterZone (cityId, waterZoneId) VALUES (1, 1);
-INSERT INTO Home (id, address, floodId, cityId, postalCode, postOfficeBox) VALUES (DEFAULT, '1234 rue du Baloney',  null, 1, 'J3P3M2', null);
+INSERT INTO Home (id, address, floodId, cityId, postalCode, postOfficeBox) VALUES (DEFAULT, '1234 rue du Baloney',  null, 1, 'J4M6O7', null);
 INSERT INTO User (id, firstname, lastname, role, birthDate, homePhoneNumber, cellPhoneNumber, workPhoneNumber, email, password) VALUES (
     DEFAULT , 'Martin', 'Sandwich', 'resident', null, '450-746-0000', '450-808-0000', '450-743-0000', 'martin@sandwich.io', '$2y$10$GbYAYXlpDvGHqYw2hLcXwuR87egdAF7vDyHqX92Nuab8Z7YhGCgxW' /* Omega123*/
 );
 INSERT INTO UserHome (userId, homeId) VALUES (1, 1);
-INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Allo', 'Ceci est une description!', CURRENT_TIMESTAMP);
-INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Allo 2', 'Ceci est une description! Ceci est une description! Ceci est une description! Ceci est une description! Ceci est une description!', CURRENT_TIMESTAMP);
-INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Allo 3', 'Ceci est une description! Ceci est une description! Ceci est une description!', CURRENT_TIMESTAMP);
-INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Allo 4', 'Ceci est une description! Ceci est une description!', CURRENT_TIMESTAMP);
+INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Besoin urgent d\'une pompe!' , 'Ma pompe vient de briser, si vouz en avez une dispo contactez-moi.', CURRENT_TIMESTAMP);
+INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Rue du Baloney barrée', 'En raison d\'une accumulation d\'eau dans la rue, le déplacement est impossible pour le moment.', CURRENT_TIMESTAMP);
+INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Besoin de sacs de sable', 'Je manque de sacs de sable cgez moi, si possible en amener dans les procahines heures!', CURRENT_TIMESTAMP);
+INSERT INTO BillboardPost (id, userId, title, content, datetime) VALUES (DEFAULT, 1, 'Recherche bon samaritain pour vider mon sous-sol', 'J\'ai de l\'eau dans cave, de l\'aide serait bien apprécié.', CURRENT_TIMESTAMP);
