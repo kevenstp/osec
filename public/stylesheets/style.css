@@ -664,3 +664,6 @@ legend {
     width: 100%;
     height : 100%;
 }
+
+.round8 {border-radius: 8px;}
+.round12 {border-radius: 12px;}
