@@ -692,6 +692,30 @@ legend {
     width: 100%;
     height : 100%;
 }
+/*******************weather*******************/
+
+#weather div > img {
+    height: 75px;
+}
+
+#weather {
+    margin-top: -75px;
+    z-index: 4508814380; /* Call me maybe */
+}
+
+.vertical-line {
+    border: 0.5px solid lightgrey;
+    min-height: 1%;
+}
+
+.horizontal-line {
+    border: 1px solid lightgrey;
+    width: 90%;
+}
+
+
+
+
 
 .text-posthead {
     color: #aaa;

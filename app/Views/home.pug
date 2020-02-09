@@ -10,7 +10,24 @@ block content
   +navbar
   +page-cover
   .container.h-100
+    .row
+      .col-3.offset-9
+        #weather.row.card.shadow
+          .d-inline-flex.flex-row.h-100
+            img(src=weather.image).mr-2.ml-3
+            .vertical-line.mt-2.mb-2
+            .d-flex.flex-column.w-100.text-center.mt-1
+              span=weather.name
+              .d-flex.flex-row.w-100.justify-content-around.mt-2
+                .flex-column
+                  i.fa.fa-temperature-high
+                  span #{format('decimal',weather.main.temp-273.15, 0)}°C
+                .flex-column
+                  i.fa.fa-tint
+                  span.ml-1 #{weather.main.humidity}%
     h1 Surveillance de la crue des eaux
+    br
+    br
     table.table
       thead
         tr
