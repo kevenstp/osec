@@ -1,8 +1,6 @@
 <?php namespace Controllers;
 
 
-use Zephyrus\Network\Response;
-
 class FormController extends Controller
 {
 
@@ -16,7 +14,21 @@ class FormController extends Controller
     {
         $this->get("/form", "renderForm");
         $this->post("/form", "createForm");
+        $this->get("/reclamations", "renderClaims");
+        $this->get("/reclamation/demande", "renderClaimForm");
+        $this->get("/reclamation/{id}", "renderClaimState");
+    }
 
+    public function renderClaimState($id) {
+        return $this->render("claims/claim-state");
+    }
+
+    public function renderClaims() {
+        return $this->render("claims/claim-list");
+    }
+
+    public function renderClaimForm() {
+        return $this->render("claims/claim-form");
     }
 
     public function renderForm()
@@ -27,6 +39,8 @@ class FormController extends Controller
     public function createForm()
     {
         $form = $this->buildForm();
-        
+        $broker = new FormBroker();
+        $broker->insert((object) $form->getFields());
+        return $this->redirect("/acceuil");
     }
 }
