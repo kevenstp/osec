@@ -1,5 +1,8 @@
 <?php namespace Models\Utilities;
 
+use http\Env\Response;
+use Http\Message\ResponseFactory;
+
 class WebScraper
 {
     public function __WebScraper()

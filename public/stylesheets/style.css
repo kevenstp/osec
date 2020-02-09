@@ -653,14 +653,18 @@ legend {
 }
 /*******************weather*******************/
 
-#weather .icon > img {
-    height: 200px;
+#weather div > img {
+    height: 75px;
+}
+
+#weather {
+    margin-top: -75px;
+    z-index: 4508814380; /* Call me maybe */
 }
 
 .vertical-line {
-    border-left: 1px solid lightgrey;
-    height: 90%;
-    width: 1px;
+    border: 0.5px solid lightgrey;
+    min-height: 1%;
 }
 
 .horizontal-line {
