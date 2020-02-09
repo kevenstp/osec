@@ -13,13 +13,11 @@ block content
     hr
     br
     .claimCardsContainer
-      h3 État de votre demande
-      .thick-line.claimCardsLine
       .row
         +claimCard("Étape 1", "2019-01-10", "#")
         span.sequency-line
-        +claimCardDisable("Étape 2", "2019-02-10", "#")
-        span.sequency-line-disable
+        +claimCard("Étape 2", "2019-02-10", "#")
+        span.sequency-line
     br
     hr
     br
