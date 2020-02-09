@@ -59,8 +59,8 @@ CREATe TABLE IF NOT EXISTS City (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(80) NOT NULL,
     province VARCHAR(5) NOT NULL,
-    weatherTimestamp TIMESTAMP
-    /*FOREIGN KEY (weatherTimestamp) REFERENCES Weather (`timestamp`) ON DELETE CASCADE ON UPDATE CASCADE*/
+    weatherTimestamp TIMESTAMP,
+    FOREIGN KEY (weatherTimestamp) REFERENCES Weather (`timestamp`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Home (
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS Home (
     cityId INTEGER NOT NULL,
     postalCode VARCHAR(6) NOT NULL,
     postOfficeBox VARCHAR(20),
-    /*FOREIGN KEY (floodId) REFERENCES Flood (id) ON DELETE CASCADE ON UPDATE CASCADE,*/
+    FOREIGN KEY (floodId) REFERENCES Flood (id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (cityId) REFERENCES City (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -90,9 +90,9 @@ CREATE TABLE IF NOT EXISTS CityWaterZone (
     FOREIGN KEY (waterZoneId) REFERENCES WaterZone (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO City (id, `name`, province, weatherTimestamp) VALUES (DEFAULT, 'Sorel-Tracy', 'Québec', NULL);
+INSERT INTO Weather (`timestamp`) VALUES (DEFAULT);
+INSERT INTO City (id, `name`, province, weatherTimestamp) VALUES (DEFAULT, 'Sorel-Tracy', 'QC', NULL);
 INSERT INTO WaterZone (id, `name`, waterLevel) VALUES (DEFAULT, 'Bas-Richelieu', 0);
-INSERT INTO CityWaterZone (cityId, waterZoneId) VALUES (1, 1);
 INSERT INTO User (id, firstname, lastname, role, birthDate, homePhoneNumber, cellPhoneNumber, workPhoneNumber, email, password) VALUES (
     DEFAULT , 'Martin', 'Sandwich', 'resident', null, '450-746-0000', '450-808-0000', '450-743-0000', 'martin@sandwich.io', '$2y$10$GbYAYXlpDvGHqYw2hLcXwuR87egdAF7vDyHqX92Nuab8Z7YhGCgxW' /* Omega123*/
 );
