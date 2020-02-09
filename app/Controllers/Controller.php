@@ -11,7 +11,6 @@ abstract class Controller extends SecurityController
     private $args;
     private $page;
 
-
     public function render($page, $args = []): Response
     {
         $this->args = $args;
