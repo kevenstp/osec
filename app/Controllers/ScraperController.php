@@ -1,0 +1,60 @@
+<?php namespace Controllers;
+
+class ScraperController extends Controller
+{
+    public function initializeRoutes()
+    {
+        $this->get("/surveillance", "renderSurveillance");
+    }
+
+    private function getDOM(string $url) : \DOMDocument
+    {
+        libxml_use_internal_errors(true);
+        $dom = new \DOMDocument();
+        $dom->loadHTMLFile($url);
+        return $dom;
+    }
+
+    /**
+     *  Surveillance de la crue des eaux;
+     */
+
+    public function renderSurveillance()
+    {
+        $url = "https://geoegl.msp.gouv.qc.ca/adnv2/";
+        $dom = $this->getDOM($url);
+        $rows = $this->getRows($dom);
+        $this->render("surveillance", [
+            'title' => 'Surveillance de la crue des eaux',
+            'rows' => $rows
+        ]);
+    }
+
+    private function getRows(\DOMDocument $dom) : \stdClass
+    {
+        $result = array();
+        $items = $this->fetchTableRows($dom);
+        $objects = array_chunk($items, 8);
+        foreach($objects as $object) {
+            array_push($result, $this->createRow($object));
+        }
+        return (object) $result;
+    }
+
+    private function createRow($row) : array
+    {
+        $attributes = array("Plan d'eau", "Lieu d'observation", "État",
+            "Tendance", "Variable hydrologique", "SIM", "Dernière mesure", "Numéro de station" );
+        $result = array();
+        for($i = 0; $i < count($row); ++$i) {
+            $result[$attributes[$i]] = $row[$i]->textContent;
+        }
+        return $result;
+    }
+
+    private function fetchTableRows( \DOMDocument $dom) : array {
+        $items = iterator_to_array($dom->getElementsByTagName('td'));
+        array_shift($items);
+        return $items;
+    }
+}
