@@ -15,7 +15,13 @@ class ProfileController extends Controller
 
     public function initializeRoutes()
     {
-        $this->get("/compte", "renderProfile");
+        $this->post("/compte", "redirectManagement");
+        $this->get("/gestion-du-compte", "renderProfile");
+    }
+
+    public function redirectManagement()
+    {
+        return $this->redirect("/gestion-du-compte");
     }
 
     public function renderProfile()

@@ -12,6 +12,7 @@ abstract class Controller extends SecurityController
         $this->args = $args;
         $this->page = $page;
         $this->setDefaultTitle("õsec");
+        $this->setDanger(true);
         return parent::render($this->page, $this->args);
     }
 
@@ -24,6 +25,13 @@ abstract class Controller extends SecurityController
     {
         if (!key_exists('title', $this->args)) {
             $this->args['title'] = $title;
+        }
+    }
+
+    private function setDanger(bool $danger)
+    {
+        if (!key_exists('danger', $this->args)) {
+            $this->args['danger'] = $danger;
         }
     }
 }
