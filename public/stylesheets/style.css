@@ -475,3 +475,23 @@ hr {
     letter-spacing: 2px;
 }
 
+/*******************weather*******************/
+
+#weather .icon > img {
+    height: 200px;
+}
+
+.vertical-line {
+    border-left: 1px solid lightgrey;
+    height: 90%;
+    width: 1px;
+}
+
+.horizontal-line {
+    border: 1px solid lightgrey;
+    width: 90%;
+}
+
+
+
+
