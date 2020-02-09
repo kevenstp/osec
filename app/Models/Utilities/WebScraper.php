@@ -7,7 +7,7 @@ class WebScraper
 {
     public function __WebScraper()
     {
-
+        
     }
 
     private function getDOM(string $url) : \DOMDocument
@@ -19,15 +19,29 @@ class WebScraper
     }
 
     /**
+     *  Carte intéractive 
+     */
+
+    public function getInteractiveMap()
+    {
+        $url = 'https://geoinondations.gouv.qc.ca/';
+        $dom = $this->getDOM($url);
+        return $this->fetchMap();
+    }
+
+    private function fetchMap() : string {
+        //return
+    }
+
+    /**
      *  Surveillance de la crue des eaux;
      */
 
     public function getSurveillance()
     {
-        $url = "https://geoegl.msp.gouv.qc.ca/adnv2/";
+        $url = 'https://geoegl.msp.gouv.qc.ca/adnv2/';
         $dom = $this->getDOM($url);
-        $rows = $this->getRows($dom);
-        return $rows;
+        return $this->getRows($dom);
     }
 
     private function getRows(\DOMDocument $dom) : \stdClass
@@ -43,8 +57,8 @@ class WebScraper
 
     private function createRow($row) : array
     {
-        $attributes = array("Plan d'eau", "Lieu d'observation", "État",
-            "Tendance", "Variable hydrologique", "SIM", "Dernière mesure", "Numéro de station" );
+        $attributes = array("water", "lieu", "state",
+            "tendency", "variable", "sim", "lastMeasure", "number" );
         $result = array();
         for($i = 0; $i < count($row); ++$i) {
             $result[$attributes[$i]] = $row[$i]->textContent;

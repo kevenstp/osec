@@ -10,6 +10,7 @@ html, body {
 h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-size: 2rem;
 }
 
 h1 span{
@@ -282,6 +283,19 @@ a {
     border-color: inherit;
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+.modal label {
+    color : white;
+}
+
+textarea {
+    resize: none;
+    height : 100px;
+}
+
+.card .position-relative h5 {
+    white-space: nowrap !important
 }
 
 .hover-dark {
@@ -675,6 +689,11 @@ legend {
 
 
 
+
+.padding-v4 {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 
 .round8 {border-radius: 8px;}
 .round12 {border-radius: 12px;}

@@ -17,7 +17,8 @@ class HomeController extends Controller
         return $this->render('home', [
             "title" => "õsec - Accueil",
             "surveillance" => $surveillance->getSurveillance(),
-            "weather" => $weatherData
+            "weather" => $weatherData,
+            "danger" => true
         ]);
     }
 

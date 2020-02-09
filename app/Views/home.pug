@@ -9,7 +9,7 @@ block header-content
 block content
   +navbar
   +page-cover
-  .container
+  .container.h-100
     .row
       .col-3.offset-9
         #weather.row.card.shadow
@@ -20,10 +20,39 @@ block content
               span Sorel-Tracy
               .d-flex.flex-row.w-100.justify-content-around.mt-2
                 .flex-column
-                    i.fa.fa-temperature-high
-                    span 30
+                  i.fa.fa-temperature-high
+                  span 30
                 .flex-column
-                    i.fa.fa-temperature-low
-                    span 10%
+                  i.fa.fa-temperature-low
+                  span 10%
+    h1 Carte intéractive
+    iframe(name="map" id="map" src="https://geoinondations.gouv.qc.ca/" width="100%" height="100%")
+    br
+    br
+    h1 Surveillance de la crue des eaux
+    table.table
+      thead
+        tr
+          th Plan d'eau
+          th Lieu d'observation
+          th État
+          th Tendance
+          th Variable hydrologique
+          th SIM
+          th Dernière mesure
+          th Numéro de station
+      tbody
+        each row in surveillance
+          tr
+            td=row.water
+            td=row.lieu
+            td=row.state
+            td=row.tendency
+            td=row.variable
+            td=row.sim
+            td=row.lastMeasure
+            td=row.number
+
+
 
 
