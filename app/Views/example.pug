@@ -1,6 +1,7 @@
 extends layout/layout
 
+block header-content
+  h1 Salut
+
 block content
-  h1 Bienvenue
-  p Nous sommes le #{format('date', currentDate)}
-  p Salut mon beau kev
+  +navbar
