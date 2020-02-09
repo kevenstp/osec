@@ -25,10 +25,12 @@ mixin flashMessage(data, type)
 
 mixin page-cover()
   .position-relative
-    .jumbotron.jumbotron-admin.text-white.cover-image(style="background-image: url('');" )
-      #page-cover-content.container.over-div
+    .jumbotron.jumbotron-admin.text-white.cover-image(style="background-image: url('../assets/adventure.jpg');" )
+      .container.over-div
+        br
+        br
         block header-content
-    .white-filter
+    .black-filter
     .dot-filter
 
 mixin navbar()
@@ -37,13 +39,12 @@ mixin navbar()
       .row.w-100.align-items-center
         .col
           a.navbar-brand(href="/profil")
-            img.align-middle(src="/assets/logo_osec.png" style="margin-right : 16px;")
+            img.align-middle(src="/assets/osec_white.png" style="margin-right : 16px;")
         .col-10.text-right.no-overflow
           .d-flex.align-items-center.justify-content-end
-            a.mr-3.hover-dark.navbar-link.animated-line(href="/cours") Cours
-            .d-inline.width36
-              a(href="/profil/")
-                img.user-img.dropdown-toggle(style="width : 36px; height: 36px; background-color: white", src="/assets/user_image/user_image_profil/")
+            a.mr-3.hover-dark.navbar-link.animated-line(href="/babillard") Babillard
+            a.mr-3.hover-dark.navbar-link.animated-line(href="/guide") Guide
+            a.mr-3.hover-dark.navbar-link.animated-line(href="/reclamations") Réclamations
 //-
   Allows usage HTTP method besides GET and POST. Zephyrus verifies the existence of a __method
   parameter in the request, if it exists, it overwrites the submitted method.

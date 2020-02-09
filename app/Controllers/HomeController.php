@@ -9,6 +9,11 @@ class HomeController extends Controller
     {
         //$this->get("/", "index");
         $this->get("/items", "jsonTest");
+        $this->get("/accueil", "renderHome");
+    }
+
+    public function renderHome() {
+        return $this->render('home');
     }
 
     public function index()
