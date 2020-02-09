@@ -4,6 +4,8 @@
 namespace Controllers;
 
 
+use Models\Brokers\BillboardBroker;
+
 class BillboardController extends Controller
 {
 
@@ -15,6 +17,8 @@ class BillboardController extends Controller
 
     public function renderBillboard()
     {
+        $broker = new BillboardBroker();
+        $posts = $broker->findAll();
         return $this->render("billboard/billboard");
     }
 }
