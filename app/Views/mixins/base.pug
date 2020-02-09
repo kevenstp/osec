@@ -28,7 +28,7 @@ mixin actions-section()
     .d-flex
       a(href='/babillard/creation' data-tooltip="tooltip" title="Créer une publication").hover-dark
         .round-button
-          i.fas.fa-pencil-alt
+          i.fas.fa-plus
 
 mixin page-cover()
   .position-relative
@@ -39,6 +39,20 @@ mixin page-cover()
         block header-content
     .black-filter
     .dot-filter
+
+mixin notes()
+  .col.mb-4
+    .card.card-body.p-0
+      .position-relative
+        .cover-image(style="background-image: url('/assets/test-banner.jpg');")
+          .over-div.position-relative
+            .position-absolute.over-corner.flex-column
+            br
+            .text-center.text-white.mb-3.ml-2.mr-2
+              h5: a.hover-dark(href="#") Allo
+            .pb-5
+        .black-filter
+        .dot-filter
 
 mixin navbar()
   nav.navbar.text-white.position-absolute
@@ -52,6 +66,10 @@ mixin navbar()
             a.mr-3.hover-dark.navbar-link.animated-line(href="/babillard") Babillard
             a.mr-3.hover-dark.navbar-link.animated-line(href="/guide") Guide
             a.mr-3.hover-dark.navbar-link.animated-line(href="/reclamations") Réclamations
+            +form("get", "alerte")(enctype="multipart/form-data")
+                button.fa.fa-bell.btn-danger.round12
+            audio#notif-sound(src='/assets/sounds/notification.mp3' preload='auto' controls='none' volume='0.1' style="display:none")
+            //button.fa.fa-bell.round12
 //-
   Allows usage HTTP method besides GET and POST. Zephyrus verifies the existence of a __method
   parameter in the request, if it exists, it overwrites the submitted method.

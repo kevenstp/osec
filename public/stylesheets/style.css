@@ -284,10 +284,6 @@ a {
     box-shadow: none;
 }
 
-.btn {
-    background: white;
-}
-
 .hover-dark {
     color : #f3f3f3;
     -webkit-transition: 0.2s ease-in-out!important;
@@ -395,7 +391,7 @@ a {
     font-size: 1.1rem;
 }
 
-#page-cover-content input {
+#page-cover-content input, #page-cover-content select {
     background: #1761a0;
     color : white;
     font-size: 0.8rem;
@@ -442,26 +438,11 @@ a {
     height: 100%;
 }
 
-.form {
-    height: 80%;
-    width: 80%;
-}
-
 hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.containerForm {
-    width: 100%;
-    height: 100%;
-}
-
-.form {
-    height: 80%;
-    width: 80%;
 }
 
 hr {
@@ -477,7 +458,7 @@ hr {
 
 #guide1 {
     width: 100%;
-    height: 100%;
+    height: 50%;
     padding-left: 10%;
     padding-right: 10%;
     background: white;
@@ -629,37 +610,9 @@ legend:before {
 }
 
 legend {
-    color : #404040;
-    font-size: 1rem;
-}
-
-legend:before {
-    counter-increment: section;
-    content: counter(section);
-    margin-right: 8px;
-    background: #606060;
-    color: #fff;
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    font-size: 0.8em;
-    line-height: 30px;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-    border-radius: 15px 15px 15px 0;
-}
-
-legend {
     font-size: 1.2rem;
     color : #606060;
     margin-bottom: 16px;
-}
-
-.post-it {
-    border-radius: 8px;
-    width : 25%;
-    height : 25%;
-    background-color: #f0f0f0;
 }
 
 .thick-line {
@@ -668,6 +621,36 @@ legend {
     border-bottom: 2px solid #808080;
 }
 
+.post-it-filter .black-filter {
+    opacity: 0;
+    border-radius: 8px;
+    -webkit-transition: 0.2s ease-in-out!important;
+}
+
+.post-it-filter:hover .black-filter {
+    opacity: 0.7;
+    -webkit-transition: 0.2s ease-in-out!important;
+}
+
+.post-it {
+    border-radius: 8px;
+    width : 25%;
+    height : 25%;
+    background-color: #f0f0f0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.post-it i {
+    font-size: 3rem;
+    color: white;
+}
+
+.post-it .over-div {
+    width: 100%;
+    height : 100%;
+}
 /*******************weather*******************/
 
 #weather .icon > img {
@@ -688,3 +671,6 @@ legend {
 
 
 
+
+.round8 {border-radius: 8px;}
+.round12 {border-radius: 12px;}
