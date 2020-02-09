@@ -27,9 +27,9 @@ class FormBroker extends BaseBroker
         ', [$id]);
     }
 
-    public function insert(stdClass $stdClass): string
+    public function insert(stdClass $param): string
     {
-        //todo
+
         return $this->getDatabase()->getLastInsertedId();
     }
 
