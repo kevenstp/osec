@@ -37,13 +37,13 @@ class CityBroker extends BaseBroker
         return $this->getDatabase()->getLastInsertedId();
     }
 
-    public function update(stdClass $stdClass, $id): string
+    public function update(stdClass $stdClass): string
     {
         $this->query('
             UPDATE City city 
             SET city.name=?, city.province=?, city.weatherTimestamp=?
             WHERE city.id=?
-        ', [$stdClass->name, $stdClass->province, $stdClass->weatherTimestamp, $id]);
+        ', [$stdClass->name, $stdClass->province, $stdClass->weatherTimestamp, $stdClass->id]);
         return $stdClass->id;
     }
 

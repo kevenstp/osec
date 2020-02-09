@@ -37,13 +37,13 @@ class WaterZoneBroker extends BaseBroker
         return $this->getDatabase()->getLastInsertedId();
     }
 
-    public function update(stdClass $stdClass, $id): string
+    public function update(stdClass $stdClass): string
     {
         $this->query('
             UPDATE WaterZone waterZone 
             SET waterZone.name = ?, waterZone.waterLevel=?
             WHERE waterZone.id=?
-        ', [$stdClass->name, $stdClass->waterLevel, $id]);
+        ', [$stdClass->name, $stdClass->waterLevel, $stdClass->id]);
         return $stdClass->id;
     }
 

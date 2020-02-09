@@ -34,7 +34,7 @@ class FormBroker extends BaseBroker
         return $this->getDatabase()->getLastInsertedId();
     }
 
-    public function update(stdClass $stdClass, $id): string
+    public function update(stdClass $stdClass): string
     {
         //todo
         return $stdClass->id;

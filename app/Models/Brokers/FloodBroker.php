@@ -37,13 +37,13 @@ class FloodBroker extends BaseBroker
         return $this->getDatabase()->getLastInsertedId();
     }
 
-    public function update(stdClass $stdClass, $id): string
+    public function update(stdClass $stdClass): string
     {
         $this->query('
             UPDATE Flood flood 
             SET flood.waterLevel=?
             WHERE flood.id=?
-        ', [$stdClass->waterLevel, $id]);
+        ', [$stdClass->waterLevel, $stdClass->id]);
         return $stdClass->id;
     }
 

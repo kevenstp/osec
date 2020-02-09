@@ -36,13 +36,13 @@ class HomeBroker extends BaseBroker
         return $this->getDatabase()->getLastInsertedId();
     }
 
-    public function update(stdClass $stdClass, $id): string
+    public function update(stdClass $stdClass): string
     {
         $this->query('
             UPDATE Home home 
             SET home.address = ?, home.floodId = ?, home.cityId = ?, home.postalCode = ?, home.postalCode = ?
             WHERE home.id=?
-        ', [$stdClass->address, $stdClass->floodId, $stdClass->cityId, $stdClass->postalCode, $stdClass->postOfficeBox, $id]);
+        ', [$stdClass->address, $stdClass->floodId, $stdClass->cityId, $stdClass->postalCode, $stdClass->postOfficeBox, $stdClass->id]);
         return $stdClass->id;
     }
 
