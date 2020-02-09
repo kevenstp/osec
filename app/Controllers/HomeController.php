@@ -12,7 +12,7 @@ class HomeController extends Controller
 
     public function renderHome() {
         $surveillance = new WebScraper();
-        $weatherData = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=Sorel-Tracy&appid=8189ecba738e207c8ecc8f5a0930a807"));
+        $weatherData = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=Shawinigan&appid=8189ecba738e207c8ecc8f5a0930a807"));
         $weatherData->image = $this->getWeatherStatus($weatherData);
         return $this->render('home', [
             "title" => "õsec - Accueil",
