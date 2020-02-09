@@ -5,6 +5,7 @@ namespace Controllers;
 
 
 use Models\Brokers\BillboardBroker;
+use Zephyrus\Application\Session;
 
 class BillboardController extends Controller
 {
@@ -12,8 +13,8 @@ class BillboardController extends Controller
     public function initializeRoutes()
     {
         $this->get("/babillard", "renderBillboard");
+        $this->post("/babillard/creation", "createPost");
         $this->get("/babillard/{id}", "renderPostIt");
-        $this->get("/babillard/creation", ""); //todo
     }
 
     public function renderPostIt($id) {
@@ -28,5 +29,16 @@ class BillboardController extends Controller
             [
                 "posts" => $posts
             ]);
+    }
+
+    public function createPost()
+    {
+        $note = (object)$this->buildForm()->getFields();
+        $note->userId = Session::getInstance()->read("userId");
+
+        $billboardBroker = new BillboardBroker();
+        $billboardBroker->insert($note);
+
+        return $this->redirect("/babillard");
     }
 }

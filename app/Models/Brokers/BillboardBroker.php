@@ -28,9 +28,11 @@ class BillboardBroker extends BaseBroker
     public function insert(stdClass $stdClass): string
     {
         $this->query('
-            INSERT INTO BillboardPost (id, userId, content, datetime) 
-            VALUES (NULL, ?, ?, CURRENT_TIMESTAMP);
-            ', [$stdClass->id, $stdClass->content]);
+            INSERT INTO BillboardPost (id, userId, title, content, datetime) 
+            VALUES (NULL, ?, ?, ?, CURRENT_TIMESTAMP);
+            ', [$stdClass->userId, $stdClass->title, $stdClass->content]);
+
+        return $this->getDatabase()->getLastInsertedId();
     }
 
     public function update(stdClass $stdClass): string

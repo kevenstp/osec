@@ -284,6 +284,19 @@ a {
     box-shadow: none;
 }
 
+.modal label {
+    color : white;
+}
+
+textarea {
+    resize: none;
+    height : 100px;
+}
+
+.card .position-relative h5 {
+    white-space: nowrap !important
+}
+
 .hover-dark {
     color : #f3f3f3;
     -webkit-transition: 0.2s ease-in-out!important;
@@ -391,7 +404,7 @@ a {
     font-size: 1.1rem;
 }
 
-#page-cover-content input {
+#page-cover-content input, #page-cover-content select {
     background: #1761a0;
     color : white;
     font-size: 0.8rem;
@@ -651,3 +664,6 @@ legend {
     width: 100%;
     height : 100%;
 }
+
+.round8 {border-radius: 8px;}
+.round12 {border-radius: 12px;}
